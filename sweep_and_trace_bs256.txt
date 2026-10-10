@@ -1,0 +1,145 @@
+### version:
+VLLM 0.23.0
+### selected kernel C:
+(EngineCore pid=3824) INFO 07-29 16:09:32 [__init__.py:546] Selected CutlassFp8BlockScaledMMKernel for Fp8LinearMethod
+### selected kernel A:
+(EngineCore pid=6742) INFO 07-29 16:18:52 [__init__.py:546] Selected FlashInferFp8DeepGEMMDynamicBlockScaledKernel for Fp8LinearMethod
+### latency C:
+### latency A:
+
+===== ARM C bs=256 =====
+file: /dev/shm/traces/C256/rank0.1785341726080656070.pt.trace.json.gz
+total GPU kernel events: 19064
+marker: void at::native::reduce_kernel<512, 1, at::native::ReduceOp<float, at:
+marker count: 33
+last 12 segment sizes: [544, 544, 544, 544, 541, 541, 541, 544, 544, 544, 544, 1120]
+STEADY DECODE STEP: 1120 launches, 7478.4 us GPU
+
+category      launch        us   %time
+gemm             297    5396.7   72.2%
+act_quant        144     679.8    9.1%
+attn             109     643.1    8.6%
+elem             297     328.5    4.4%
+mem              160     190.0    2.5%
+other            109     179.7    2.4%
+sample             3      57.9    0.8%
+norm               1       2.7    0.0%
+TOTAL           1120    7478.4  100.0%
+
+== ACT-QUANT KERNELS IN ONE STEP ==
+   71x    502.4us  void vllm::rms_norm_per_block_quant_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, true, 128>(
+   36x     86.8us  void per_token_group_quant_8bit_kernel<c10::BFloat16, c10::Float8_e4m3fn, false, false, float>(
+   36x     83.8us  void vllm::silu_and_mul_per_block_quant_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, 128>(c1
+    1x      6.8us  void vllm::rms_norm_per_block_quant_kernel<c10::BFloat16, c10::Float8_e4m3fn, false, true, 128>
+  -> 144/1120 launches, 679.8us (9.1% of step)
+
+== ALL DISTINCT KERNELS IN ONE STEP ==
+   n        us  cat        name
+ 144     153.8  elem       void at::native::vectorized_elementwise_kernel<4, at::native::FillFunctor<c10::Float8_e4
+ 144     170.0  mem        memcpy32_post
+ 144     160.6  elem       void at::native::vectorized_elementwise_kernel<4, at::native::FillFunctor<float>, std::a
+ 144     194.7  gemm       void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<at::nativ
+ 144    4830.6  gemm       void cutlass::device_kernel<vllm::cutlass_3x_gemm_fp8_blockwise<cutlass::bfloat16_t, 1, 
+  71     502.4  act_quant  void vllm::rms_norm_per_block_quant_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, true
+  36      54.5  other      triton_red_fused_1
+  36      70.6  other      triton_poi_fused_2
+  36      93.5  attn       void vllm::reshape_and_cache_flash_kernel<__nv_bfloat16, __nv_bfloat16, (vllm::Fp8KVCach
+  36     424.7  attn       void cutlass::device_kernel<flash::enable_sm90_or_later<flash::FlashAttnFwdSm90<flash::C
+  36     122.5  attn       void cutlass::device_kernel<flash::FlashAttnFwdCombine<cute::tuple<cute::C<8>, cute::C<1
+  36      86.8  act_quant  void per_token_group_quant_8bit_kernel<c10::BFloat16, c10::Float8_e4m3fn, false, false, 
+  36      50.8  other      triton_poi_fused_0
+  36      83.8  act_quant  void vllm::silu_and_mul_per_block_quant_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, 
+  10      13.0  mem        Memcpy HtoD (Pinned -> Device)
+   3       3.5  mem        Memcpy DtoD (Device -> Device)
+   2       4.8  gemm       void at::native::index_elementwise_kernel<128, 4, at::native::gpu_index_kernel<at::nativ
+   2       3.9  gemm       void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::Ten
+   2       2.2  elem       void at::native::unrolled_elementwise_kernel<at::native::FillFunctor<int>, std::array<ch
+   2       1.7  mem        Memset (Device)
+   1       2.4  gemm       void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::Ten
+   1       1.8  mem        Memcpy DtoH (Device -> Pinned)
+   1       1.1  elem       void at::native::vectorized_elementwise_kernel<4, at::native::FillFunctor<int>, std::arr
+   1       1.8  elem       void at::native::vectorized_elementwise_kernel<2, at::native::CUDAFunctor_add<long>, std
+   1       1.6  elem       void at::native::vectorized_elementwise_kernel<4, at::native::CUDAFunctor_add<int>, std:
+   1       3.8  other      _compute_slot_mapping_kernel
+   1       2.1  elem       void at::native::_scatter_gather_elementwise_kernel<128, 8, at::native::_cuda_scatter_ga
+   1       1.2  elem       void at::native::unrolled_elementwise_kernel<at::native::CUDAFunctorOnSelf_add<int>, std
+   1       2.4  attn       void flash::prepare_varlen_num_blocks_kernel<1, false>(int, int, int, int const*, int co
+   1       2.1  elem       triton_poi_fused__to_copy_embedding_0
+   1       6.8  act_quant  void vllm::rms_norm_per_block_quant_kernel<c10::BFloat16, c10::Float8_e4m3fn, false, tru
+   1       2.7  norm       triton_red_fused_fused_add_rms_norm_1
+   1       4.0  gemm       void at::native::index_elementwise_kernel<128, 4, at::native::gpu_index_kernel<at::nativ
+   1     349.5  gemm       nvjet_sm90_tst_384x8_64x4_2x1_v_bz_TNT
+   1       4.3  gemm       void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::Ten
+   1       2.5  gemm       void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<at::nativ
+   1      44.5  sample     void at::native::(anonymous namespace)::cunn_SoftMaxForward<4, float, float, float, at::
+   1       3.7  sample     void at::native::(anonymous namespace)::distribution_elementwise_grid_stride_kernel<floa
+   1       2.0  elem       void at::native::vectorized_elementwise_kernel<4, at::native::BinaryFunctor<float, float
+   1       9.6  sample     void at::native::reduce_kernel<512, 1, at::native::ReduceOp<float, at::native::ArgMaxOps
+======================================================================
+
+===== ARM A bs=256 =====
+file: /dev/shm/traces/A256/rank0.1785342040962031764.pt.trace.json.gz
+total GPU kernel events: 20399
+marker: void at::native::reduce_kernel<512, 1, at::native::ReduceOp<float, at:
+marker count: 33
+last 12 segment sizes: [615, 615, 615, 615, 612, 612, 612, 615, 615, 615, 615, 615]
+STEADY DECODE STEP: 615 launches, 4781.8 us GPU
+
+category      launch        us   %time
+gemm             153    3234.7   67.6%
+attn             109     735.9   15.4%
+act_quant        144     316.3    6.6%
+norm              73     192.6    4.0%
+other             73     141.3    3.0%
+sample             3      68.8    1.4%
+act               36      58.3    1.2%
+mem               16      19.9    0.4%
+elem               8      14.0    0.3%
+TOTAL            615    4781.8  100.0%
+
+== ACT-QUANT KERNELS IN ONE STEP ==
+  144x    316.3us  void tensorrt_llm::kernels::fp8_blockscale_gemm::scale_1x128_kernel<__nv_bfloat16, __nv_fp8_e4m
+  -> 144/615 launches, 316.3us (6.6% of step)
+
+== ALL DISTINCT KERNELS IN ONE STEP ==
+   n        us  cat        name
+ 144     316.3  act_quant  void tensorrt_llm::kernels::fp8_blockscale_gemm::scale_1x128_kernel<__nv_bfloat16, __nv_
+  36     410.0  gemm       void deep_gemm::fp8_gemm_kernel_swapAB<6144u, 4096u, 128u, 16u, 128u, 1u, 8u, 128u, 128u
+  36     108.0  attn       void vllm::reshape_and_cache_flash_kernel<__nv_bfloat16, __nv_bfloat16, (vllm::Fp8KVCach
+  36     482.3  attn       void cutlass::device_kernel<flash::enable_sm90_or_later<flash::FlashAttnFwdSm90<flash::C
+  36     142.9  attn       void cutlass::device_kernel<flash::FlashAttnFwdCombine<cute::tuple<cute::C<8>, cute::C<1
+  36     375.6  gemm       void deep_gemm::fp8_gemm_kernel_swapAB<4096u, 4096u, 128u, 16u, 128u, 1u, 8u, 128u, 128u
+  36      91.0  norm       triton_red_fused_fused_add_rms_norm_0
+  36    1170.9  gemm       void deep_gemm::fp8_gemm_kernel_swapAB<24576u, 4096u, 128u, 16u, 128u, 1u, 8u, 128u, 128
+  36      58.3  act        triton_poi_fused_mul_silu_slice_1
+  36     902.9  gemm       void deep_gemm::fp8_gemm_kernel_swapAB<4096u, 12288u, 128u, 16u, 128u, 1u, 8u, 128u, 128
+  36      97.6  norm       triton_red_fused_fused_add_rms_norm_2
+  35      58.7  other      triton_red_fused_3
+  35      74.5  other      triton_poi_fused_4
+  10      12.3  mem        Memcpy HtoD (Pinned -> Device)
+   3       3.9  mem        Memcpy DtoD (Device -> Device)
+   2       5.1  gemm       void at::native::index_elementwise_kernel<128, 4, at::native::gpu_index_kernel<at::nativ
+   2       4.4  gemm       void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::Ten
+   2       2.7  elem       void at::native::unrolled_elementwise_kernel<at::native::FillFunctor<int>, std::array<ch
+   2       1.7  mem        Memset (Device)
+   1       1.8  gemm       void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::Ten
+   1       2.1  mem        Memcpy DtoH (Device -> Pinned)
+   1       1.3  elem       void at::native::vectorized_elementwise_kernel<4, at::native::FillFunctor<int>, std::arr
+   1       1.9  elem       void at::native::vectorized_elementwise_kernel<2, at::native::CUDAFunctor_add<long>, std
+   1       1.8  elem       void at::native::vectorized_elementwise_kernel<4, at::native::CUDAFunctor_add<int>, std:
+   1       4.4  other      _compute_slot_mapping_kernel
+   1       2.6  elem       void at::native::_scatter_gather_elementwise_kernel<128, 8, at::native::_cuda_scatter_ga
+   1       1.4  elem       void at::native::unrolled_elementwise_kernel<at::native::CUDAFunctorOnSelf_add<int>, std
+   1       2.7  attn       void flash::prepare_varlen_num_blocks_kernel<1, false>(int, int, int, int const*, int co
+   1       4.0  norm       triton_red_fused__to_copy_embedding_rms_norm_0
+   1       1.6  other      triton_red_fused_1
+   1       2.1  other      triton_poi_fused_2
+   1       4.8  gemm       void at::native::index_elementwise_kernel<128, 4, at::native::gpu_index_kernel<at::nativ
+   1     351.1  gemm       nvjet_sm90_tst_384x8_64x4_2x1_v_bz_TNT
+   1       4.9  gemm       void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::Ten
+   1       3.0  gemm       void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<at::nativ
+   1      52.8  sample     void at::native::(anonymous namespace)::cunn_SoftMaxForward<4, float, float, float, at::
+   1       4.6  sample     void at::native::(anonymous namespace)::distribution_elementwise_grid_stride_kernel<floa
+   1       2.4  elem       void at::native::vectorized_elementwise_kernel<4, at::native::BinaryFunctor<float, float
+   1      11.3  sample     void at::native::reduce_kernel<512, 1, at::native::ReduceOp<float, at::native::ArgMaxOps
+======================================================================
