@@ -72,14 +72,14 @@ bs=1 deltas are end-to-end latency; bs=256 values are summed GPU kernel time per
 
 | path | contents |
 |---|---|
-| `bench/vllm_profile/microbench_quant.py` | Fused op vs the rms_norm + quant pair; defines `bench_gpu` (CUDA events) |
-| `bench/vllm_profile/microbench_hidden.py` | Hidden-size sweep at n=1 with a `group_size` control; imports from `microbench_quant.py`, keep them together |
-| `bench/vllm_profile/an.py` | Loads a torch profiler trace (chrome JSON, `.gz`), finds the decode-step period by self-similarity of the kernel-name sequence, categorizes kernels by regex |
-| `bench/vllm_profile/an2.py` | Segments steps by the sampler marker and prints a per-step kernel census; imports `an.py` |
-| `bench/vllm_profile/run_bs256.sh` | Driver for arms C and A at bs=256 with profiling |
-| `bench/vllm_profile/sweep_hidden_n1.txt` | Raw hidden sweep. `ERR` rows at group 256 and 32 are expected: the fused op is instantiated only for 64 and 128 |
-| `bench/vllm_profile/sweep_and_trace_bs256.txt` | Raw bs=256 output. The latency sections are empty (see Known gaps) |
-| `results/vllm_qwen3_fp8_profile.md` | Original profiling report (2026-07-28). Predates the microbenchmarks |
+| `microbench_quant.py` | Fused op vs the rms_norm + quant pair; defines `bench_gpu` (CUDA events) |
+| `microbench_hidden.py` | Hidden-size sweep at n=1 with a `group_size` control; imports from `microbench_quant.py`, keep them together |
+| `an.py` | Loads a torch profiler trace (chrome JSON, `.gz`), finds the decode-step period by self-similarity of the kernel-name sequence, categorizes kernels by regex |
+| `an2.py` | Segments steps by the sampler marker and prints a per-step kernel census; imports `an.py` |
+| `run_bs256.sh` | Driver for arms C and A at bs=256 with profiling |
+| `sweep_hidden_n1.txt` | Raw hidden sweep. `ERR` rows at group 256 and 32 are expected: the fused op is instantiated only for 64 and 128 |
+| `sweep_and_trace_bs256.txt` | Raw bs=256 output. The latency sections are empty (see Known gaps) |
+| `vllm_qwen3_fp8_profile.md` | Original profiling report (2026-07-28). Predates the microbenchmarks |
 
 **Tooling caveats.** The `an2.py` marker can match an ArgMax `reduce_kernel` that fires about twice per step, which yields half-step segments. Windows were verified by a kernel census against the 36-layer model: 568 launches per step at bs=1 (arm A), 1120 at bs=256 (arm C). Kernel categories are regex-based, and `scale_1x128_kernel` lives under the `fp8_blockscale_gemm` namespace, so match it by `scale_1x128` explicitly.
 
@@ -96,18 +96,21 @@ vllm bench latency --model Qwen/Qwen3-8B-FP8 \
   --profiler-config.torch_profiler_with_stack=false \
   --profiler-config.torch_profiler_dir=./traces/A
 
-# bs=256, arms C and A
-bash bench/vllm_profile/run_bs256.sh
+# bs=256, arms C and A. Written for a vast.ai H100 container: installs vLLM 0.23.0
+# into /root/venv, expects an.py and an2.py in /root, writes /root/RESULTS256.txt
+cp an.py an2.py /root/ && bash run_bs256.sh
 
 # Per-step census from a trace
-python bench/vllm_profile/an2.py <trace.json.gz>
+python an2.py <trace.json.gz>
 
 # Microbenchmarks (need a vLLM build with the _C ops; numbers above are from H100 NVL)
-python bench/vllm_profile/microbench_quant.py
-python bench/vllm_profile/microbench_hidden.py
+python microbench_quant.py
+python microbench_hidden.py
 ```
 
-**Environment notes:**
-- If `/dev/shm` or `TMPDIR` is mounted `noexec`, Inductor fails to load compiled kernels. Point `TORCHINDUCTOR_CACHE_DIR` at an exec-capable filesystem.
+**Environment notes** (vast.ai container; details in `run_bs256.sh`):
+- `/dev/shm` is tmpfs mounted `noexec`, so the venv must live on the overlay: torch's `.so` files fail to `dlopen` from tmpfs.
+- `uv` unpacks wheels into `TMPDIR` before moving them into the venv. On the 16 GB overlay this double-counts every package and hits `ENOSPC` on torch, so `TMPDIR` goes to `/dev/shm`.
+- Inductor and Triton JIT their launchers and `dlopen` them, so `TORCHINDUCTOR_CACHE_DIR` and `TRITON_CACHE_DIR` must point at the exec-capable overlay, not at `TMPDIR`.
 - The nightly wheel used for bs=1 later returned 404, so the rest was pinned to vLLM 0.23.0 from PyPI.
 - `ncu` needs GPU performance-counter permissions that unprivileged containers don't have.
