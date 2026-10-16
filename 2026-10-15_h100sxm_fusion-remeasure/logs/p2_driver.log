@@ -1,0 +1,181 @@
+12:47:39 A_bs1_r0 33, 345 MHz, 72.01 W
+  exit=0 Avg latency: 1.2461901332542766 seconds
+12:49:36 B_bs1_r0 36, 345 MHz, 73.42 W
+  exit=0 Avg latency: 1.35995225594379 seconds
+12:51:34 C_bs1_r0 37, 405 MHz, 85.60 W
+  exit=0 Avg latency: 1.3298972222662997 seconds
+12:53:36 A_bs8_r0 36, 345 MHz, 73.00 W
+  exit=0 Avg latency: 1.279629147896776 seconds
+12:55:15 B_bs8_r0 39, 1980 MHz, 133.12 W
+  exit=0 Avg latency: 1.3554624570300802 seconds
+12:56:53 C_bs8_r0 37, 420 MHz, 74.30 W
+  exit=0 Avg latency: 1.6460673616908026 seconds
+12:58:26 A_bs16_r0 39, 555 MHz, 112.54 W
+  exit=0 Avg latency: 1.2781055269937496 seconds
+13:00:08 B_bs16_r0 38, 450 MHz, 76.54 W
+  exit=0 Avg latency: 1.4286616051918828 seconds
+13:01:57 C_bs16_r0 39, 345 MHz, 73.97 W
+  exit=0 Avg latency: 1.7842672441678586 seconds
+13:03:58 A_bs24_r0 38, 405 MHz, 74.17 W
+  exit=0 Avg latency: 1.5292062941996847 seconds
+13:06:03 B_bs24_r0 38, 390 MHz, 79.36 W
+  exit=0 Avg latency: 1.5027642443426885 seconds
+13:08:02 C_bs24_r0 38, 435 MHz, 82.90 W
+  exit=0 Avg latency: 1.8619295709184371 seconds
+13:10:05 A_bs32_r0 37, 345 MHz, 73.34 W
+  exit=0 Avg latency: 1.5604632426868192 seconds
+13:12:09 B_bs32_r0 38, 345 MHz, 73.84 W
+  exit=0 Avg latency: 1.5158740327460691 seconds
+13:13:48 C_bs32_r0 41, 1980 MHz, 134.04 W
+  exit=0 Avg latency: 2.053756268246798 seconds
+13:15:38 A_bs48_r0 39, 480 MHz, 112.68 W
+  exit=0 Avg latency: 1.551377328293165 seconds
+13:17:20 B_bs48_r0 41, 600 MHz, 131.73 W
+  exit=0 Avg latency: 1.6328016619023402 seconds
+13:18:57 C_bs48_r0 39, 450 MHz, 84.83 W
+  exit=0 Avg latency: 2.3558930741564836 seconds
+13:20:57 A_bs64_r0 39, 405 MHz, 75.00 W
+  exit=0 Avg latency: 1.8462673190515488 seconds
+13:23:08 B_bs64_r0 40, 360 MHz, 74.62 W
+  exit=0 Avg latency: 1.8459705759130884 seconds
+13:25:11 C_bs64_r0 40, 435 MHz, 79.09 W
+  exit=0 Avg latency: 2.6512224959849844 seconds
+13:27:38 A_bs128_r0 39, 345 MHz, 73.99 W
+  exit=0 Avg latency: 2.279698254802497 seconds
+13:30:03 B_bs128_r0 42, 375 MHz, 75.21 W
+  exit=0 Avg latency: 2.3868232277513015 seconds
+13:32:19 C_bs128_r0 41, 345 MHz, 74.91 W
+  exit=0 Avg latency: 3.7014249155530705 seconds
+13:35:04 A_bs256_r0 37, 345 MHz, 73.13 W
+  exit=0 Avg latency: 3.7280278831138274 seconds
+13:37:59 B_bs256_r0 42, 435 MHz, 99.01 W
+  exit=0 Avg latency: 3.837755324947648 seconds
+13:40:56 C_bs256_r0 41, 345 MHz, 74.81 W
+  exit=0 Avg latency: 4.6300339035457 seconds
+13:44:11 B_bs1_r1 44, 450 MHz, 79.68 W
+  exit=0 Avg latency: 1.3216650911082979 seconds
+13:45:51 C_bs1_r1 37, 420 MHz, 74.09 W
+  exit=0 Avg latency: 1.2941663643345236 seconds
+13:47:25 A_bs1_r1 37, 480 MHz, 102.74 W
+  exit=0 Avg latency: 1.1877969180000947 seconds
+13:49:08 B_bs8_r1 37, 510 MHz, 102.93 W
+  exit=0 Avg latency: 1.3472111489565577 seconds
+13:50:47 C_bs8_r1 37, 465 MHz, 76.26 W
+  exit=0 Avg latency: 1.6574284481466748 seconds
+13:52:28 A_bs8_r1 37, 390 MHz, 76.74 W
+  exit=0 Avg latency: 1.2779607839242089 seconds
+13:54:10 B_bs16_r1 37, 360 MHz, 73.55 W
+  exit=0 Avg latency: 1.407895486272173 seconds
+13:55:57 C_bs16_r1 38, 405 MHz, 74.01 W
+  exit=0 Avg latency: 1.7432060908002314 seconds
+13:57:43 A_bs16_r1 38, 360 MHz, 74.08 W
+  exit=0 Avg latency: 1.3362677156343126 seconds
+13:59:25 B_bs24_r1 37, 360 MHz, 73.86 W
+  exit=0 Avg latency: 1.4759402658382896 seconds
+14:01:09 C_bs24_r1 39, 435 MHz, 84.43 W
+  exit=0 Avg latency: 1.8755259639001451 seconds
+14:03:00 A_bs24_r1 39, 450 MHz, 95.36 W
+  exit=0 Avg latency: 1.4203612143406645 seconds
+14:04:47 B_bs32_r1 38, 435 MHz, 74.76 W
+  exit=0 Avg latency: 1.5135851043974982 seconds
+14:06:25 C_bs32_r1 38, 435 MHz, 83.41 W
+  exit=0 Avg latency: 2.079847721051192 seconds
+14:08:16 A_bs32_r1 40, 435 MHz, 83.17 W
+  exit=0 Avg latency: 1.5070251736440696 seconds
+14:10:05 B_bs48_r1 38, 360 MHz, 74.13 W
+  exit=0 Avg latency: 1.6821798127202783 seconds
+14:11:55 C_bs48_r1 40, 540 MHz, 116.07 W
+  exit=0 Avg latency: 2.3398622417938895 seconds
+14:13:56 A_bs48_r1 41, 390 MHz, 75.73 W
+  exit=0 Avg latency: 1.5966976467869245 seconds
+14:15:45 B_bs64_r1 39, 450 MHz, 84.70 W
+  exit=0 Avg latency: 1.7732777259370778 seconds
+14:17:37 C_bs64_r1 41, 480 MHz, 99.99 W
+  exit=0 Avg latency: 2.6035866799007636 seconds
+14:19:46 A_bs64_r1 41, 480 MHz, 86.19 W
+  exit=0 Avg latency: 1.6570578685437796 seconds
+14:21:36 B_bs128_r1 42, 630 MHz, 130.03 W
+  exit=0 Avg latency: 2.238136577256955 seconds
+14:23:38 C_bs128_r1 42, 435 MHz, 79.02 W
+  exit=0 Avg latency: 3.4988722163601778 seconds
+14:26:13 A_bs128_r1 42, 345 MHz, 74.86 W
+  exit=0 Avg latency: 2.2767332243849525 seconds
+14:28:20 B_bs256_r1 42, 390 MHz, 77.36 W
+  exit=0 Avg latency: 3.3636957354610786 seconds
+14:30:50 C_bs256_r1 43, 480 MHz, 99.95 W
+  exit=0 Avg latency: 4.599833096802468 seconds
+14:33:47 A_bs256_r1 43, 450 MHz, 80.36 W
+  exit=0 Avg latency: 3.280644408898661 seconds
+14:36:17 C_bs1_r2 43, 420 MHz, 77.14 W
+  exit=0 Avg latency: 1.2799002653046045 seconds
+14:37:44 A_bs1_r2 37, 420 MHz, 74.31 W
+  exit=0 Avg latency: 1.1735276655992493 seconds
+14:39:23 B_bs1_r2 35, 435 MHz, 88.93 W
+  exit=0 Avg latency: 1.2549896949494723 seconds
+14:40:53 C_bs8_r2 36, 360 MHz, 73.69 W
+  exit=0 Avg latency: 1.6604595543001779 seconds
+14:42:35 A_bs8_r2 38, 450 MHz, 88.00 W
+  exit=0 Avg latency: 1.2655043369159102 seconds
+14:44:17 B_bs8_r2 37, 555 MHz, 114.56 W
+  exit=0 Avg latency: 1.3071683439600748 seconds
+14:45:59 C_bs16_r2 37, 375 MHz, 74.00 W
+  exit=0 Avg latency: 1.7449906784517224 seconds
+14:47:34 A_bs16_r2 39, 525 MHz, 111.42 W
+  exit=0 Avg latency: 1.305865584948333 seconds
+14:49:13 B_bs16_r2 38, 405 MHz, 74.44 W
+  exit=0 Avg latency: 1.3842978569620754 seconds
+14:50:51 C_bs24_r2 39, 525 MHz, 130.73 W
+  exit=0 Avg latency: 1.8930877055041493 seconds
+14:52:42 A_bs24_r2 39, 525 MHz, 120.24 W
+  exit=0 Avg latency: 1.4530747601995244 seconds
+14:54:27 B_bs24_r2 38, 435 MHz, 75.06 W
+  exit=0 Avg latency: 1.4420760953915306 seconds
+14:56:10 C_bs32_r2 38, 495 MHz, 101.92 W
+  exit=0 Avg latency: 2.0347234556043987 seconds
+14:58:04 A_bs32_r2 40, 495 MHz, 91.44 W
+  exit=0 Avg latency: 1.4537993052974343 seconds
+14:59:51 B_bs32_r2 38, 480 MHz, 80.30 W
+  exit=0 Avg latency: 1.5020146440016107 seconds
+15:01:33 C_bs48_r2 39, 450 MHz, 99.42 W
+  exit=0 Avg latency: 2.3650869902980047 seconds
+15:03:35 A_bs48_r2 40, 480 MHz, 80.88 W
+  exit=0 Avg latency: 1.5822079783072696 seconds
+15:05:19 B_bs48_r2 41, 1980 MHz, 132.88 W
+  exit=0 Avg latency: 1.6483832232828717 seconds
+15:07:02 C_bs64_r2 40, 435 MHz, 75.42 W
+  exit=0 Avg latency: 2.538446340052178 seconds
+15:09:04 A_bs64_r2 41, 360 MHz, 77.25 W
+  exit=0 Avg latency: 1.7229015205521137 seconds
+15:10:56 B_bs64_r2 40, 600 MHz, 120.13 W
+  exit=0 Avg latency: 1.7743421766033862 seconds
+15:12:45 C_bs128_r2 39, 510 MHz, 97.04 W
+  exit=0 Avg latency: 3.592688217794057 seconds
+15:15:17 A_bs128_r2 40, 390 MHz, 74.81 W
+  exit=0 Avg latency: 2.1699404346523807 seconds
+15:17:11 B_bs128_r2 41, 465 MHz, 96.31 W
+  exit=0 Avg latency: 2.2577037752431353 seconds
+15:19:10 C_bs256_r2 41, 480 MHz, 98.33 W
+  exit=0 Avg latency: 4.512555415759562 seconds
+15:22:08 A_bs256_r2 45, 1980 MHz, 135.17 W
+  exit=0 Avg latency: 3.3326516516448463 seconds
+15:24:40 B_bs256_r2 43, 495 MHz, 97.25 W
+  exit=0 Avg latency: 3.380643007531762 seconds
+15:27:11 prefill_A_bs1 42, 450 MHz, 97.06 W
+  exit=0 Avg latency: 0.04533027574070729 seconds
+15:28:15 prefill_B_bs1 34, 465 MHz, 77.81 W
+  exit=0 Avg latency: 0.05419713339069858 seconds
+15:29:24 prefill_C_bs1 33, 375 MHz, 72.98 W
+  exit=0 Avg latency: 0.05296277505694889 seconds
+15:30:32 prefill_A_bs8 33, 390 MHz, 73.08 W
+  exit=0 Avg latency: 0.30567094781436027 seconds
+15:31:53 prefill_B_bs8 35, 435 MHz, 98.39 W
+  exit=0 Avg latency: 0.30516081446548926 seconds
+15:33:13 prefill_C_bs8 36, 450 MHz, 92.05 W
+  exit=0 Avg latency: 0.34285363380331546 seconds
+15:34:26 prefill_A_bs32 36, 390 MHz, 73.77 W
+  exit=0 Avg latency: 1.1055373241833877 seconds
+15:36:03 prefill_B_bs32 41, 480 MHz, 100.96 W
+  exit=0 Avg latency: 1.1176211338548456 seconds
+15:37:40 prefill_C_bs32 40, 480 MHz, 103.93 W
+  exit=0 Avg latency: 1.2876423011883162 seconds
+ALL_DONE

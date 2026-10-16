@@ -1,0 +1,127 @@
++ export WORK=/workspace HF_HOME=/workspace/hf
++ WORK=/workspace
++ HF_HOME=/workspace/hf
++ cd /workspace
++ '[' -d .venv ']'
++ uv venv --python 3.12 .venv
+Using CPython 3.12.3 interpreter at: /usr/bin/python3.12
+Creating virtual environment at: .venv
+Activate with: source .venv/bin/activate
++ source .venv/bin/activate
+++ '[' -z '' ']'
+++ '[' -n x ']'
+++ SCRIPT_PATH=.venv/bin/activate
+++ '[' .venv/bin/activate = scripts/00_setup.sh ']'
+++ deactivate nondestructive
+++ unset -f pydoc
+++ '[' -z '' ']'
+++ '[' -z '' ']'
+++ hash -r
+++ '[' -z '' ']'
+++ unset VIRTUAL_ENV
+++ unset VIRTUAL_ENV_PROMPT
+++ '[' '!' nondestructive = nondestructive ']'
+++ VIRTUAL_ENV=/workspace/.venv
+++ '[' linux-gnu = cygwin ']'
+++ '[' linux-gnu = msys ']'
+++ export VIRTUAL_ENV
+++ '[' -z '' ']'
+++ unset SCRIPT_PATH
+++ _OLD_VIRTUAL_PATH=/opt/instance-tools/bin:/usr/local/nvidia/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ PATH=/workspace/.venv/bin:/opt/instance-tools/bin:/usr/local/nvidia/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ export PATH
+++ '[' x '!=' x ']'
++++ basename /workspace/.venv
+++ VIRTUAL_ENV_PROMPT=.venv
+++ export VIRTUAL_ENV_PROMPT
+++ '[' -z '' ']'
+++ '[' -z '' ']'
+++ _OLD_VIRTUAL_PS1=
+++ PS1='(.venv) '
+++ export PS1
+++ alias pydoc
+++ true
+++ hash -r
++ grep -q /workspace/.venv/bin/activate /root/.bashrc
++ echo 'source /workspace/.venv/bin/activate'
++ '[' -d vllm ']'
++ git clone https://github.com/vllm-project/vllm.git vllm
+Cloning into 'vllm'...
+Updating files:  73% (5765/7798)Updating files:  74% (5771/7798)Updating files:  75% (5849/7798)Updating files:  76% (5927/7798)Updating files:  77% (6005/7798)Updating files:  78% (6083/7798)Updating files:  79% (6161/7798)Updating files:  80% (6239/7798)Updating files:  81% (6317/7798)Updating files:  82% (6395/7798)Updating files:  83% (6473/7798)Updating files:  84% (6551/7798)Updating files:  85% (6629/7798)Updating files:  86% (6707/7798)Updating files:  87% (6785/7798)Updating files:  88% (6863/7798)Updating files:  89% (6941/7798)Updating files:  90% (7019/7798)Updating files:  91% (7097/7798)Updating files:  92% (7175/7798)Updating files:  93% (7253/7798)Updating files:  94% (7331/7798)Updating files:  95% (7409/7798)Updating files:  96% (7487/7798)Updating files:  97% (7565/7798)Updating files:  98% (7643/7798)Updating files:  99% (7721/7798)Updating files: 100% (7798/7798)Updating files: 100% (7798/7798), done.
++ cd vllm
++ git rev-parse HEAD
++ tee /root/fusion-study/VLLM_SHA
+e8e1e96196725f097eae2394cbc458b1f5a679b8
++ git log -1 '--format=%H %cd %s'
++ tee /root/fusion-study/logs/vllm_commit.txt
+e8e1e96196725f097eae2394cbc458b1f5a679b8 Thu Oct 15 19:10:59 2026 +0800 [ROCm][DSv4] AITER MegaMoE Fixed-Slot Dispatch For DeepSeek-V4 (#61262)
++ VLLM_USE_PRECOMPILED=1
++ uv pip install -e .
++ tail -60
+ + pycparser==3.11
+ + pydantic==2.14.1
+ + pydantic-core==2.50.1
+ + pydantic-extra-types==2.11.1
+ + pydantic-settings==2.16.0
+ + pygments==2.21.0
+ + pyjwt==2.15.1
+ + pynvvideocodec==2.0.4
+ + python-dotenv==1.2.4
+ + python-json-logger==4.2.0
+ + python-multipart==0.0.32
+ + pyyaml==6.0.3
+ + pyzmq==27.2.0
+ + quack-kernels==0.6.5
+ + referencing==0.37.0
+ + regex==2026.9.29
+ + requests==2.34.2
+ + rich==15.0.0
+ + rich-toolkit==0.20.6
+ + rignore==0.8.1
+ + rpds-py==2026.9.1
+ + safetensors==0.8.0
+ + sentencepiece==0.2.2
+ + sentry-sdk==2.72.0
+ + setproctitle==1.3.8
+ + setuptools==80.10.2
+ + shellingham==1.5.4
+ + six==1.17.0
+ + sniffio==1.3.1
+ + sse-starlette==3.5.0
+ + starlette==1.8.0
+ + supervisor==4.3.0
+ + sympy==1.14.0
+ + tabulate==0.10.0
+ + tiktoken==0.14.0
+ + tilelang==0.1.12
+ + tokenizers==0.23.3
+ + tokenspeed-mla==2.0.2
+ + tokenspeed-triton==3.9.10.post20261008
+ + torch==2.14.0
+ + torch-c-dlpack-ext==0.1.5
+ + torchaudio==2.11.0
+ + torchcodec==0.17.0
+ + torchvision==0.29.0
+ + tqdm==4.70.1
+ + transformers==5.19.0
+ + triton==3.8.0
+ + truststore==0.10.5
+ + typer==0.27.3
+ + typing-extensions==4.16.0
+ + typing-inspection==0.4.4
+ + urllib3==2.8.0
+ + uvicorn==0.54.0
+ + uvloop==0.23.0
+ + vllm==0.32.0rc1.dev218+ge8e1e9619.precompiled (from file:///workspace/vllm)
+ + watchfiles==1.3.0
+ + websockets==17.2
+ + xgrammar==0.2.8
+ + yarl==1.25.1
+ + z3-solver==4.15.4.0
++ python -c 'import vllm, torch; print('\''vllm'\'', vllm.__version__, '\''torch'\'', torch.__version__, '\''cuda'\'', torch.version.cuda)'
+W1015 12:19:59.276000 2667 torch/_opaque_base.py:6] torch._opaque_base is deprecated, use torch._custom_class_base instead
+W1015 12:19:59.277000 2667 torch/_library/opaque_object.py:288] register_opaque_type is deprecated, use register_custom_class instead
+W1015 12:19:59.277000 2667 torch/_library/opaque_object.py:211] typ='value' is deprecated, use typ='constant' instead
+vllm 0.32.0rc1.dev218+ge8e1e9619 torch 2.14.0+cu130 cuda 13.0
++ echo SETUP_DONE
+SETUP_DONE

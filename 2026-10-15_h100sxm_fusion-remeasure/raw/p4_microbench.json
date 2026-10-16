@@ -1,0 +1,162 @@
+{
+ "hidden": 4096,
+ "group": 128,
+ "peak_bw": 3350000000000.0,
+ "gpu": "NVIDIA H100 80GB HBM3",
+ "rows": [
+  {
+   "tokens": 1,
+   "residual": false,
+   "fused_us": 4.715792179107666,
+   "unfused_us": 4.046703815460205,
+   "speedup": 0.8581175042844938,
+   "fused_bw_pct": 0.13044768635688278,
+   "unfused_bw_pct": 0.15201611166952161,
+   "bytes": 20608,
+   "max_rel_diff": 0.06281664692763742
+  },
+  {
+   "tokens": 1,
+   "residual": true,
+   "fused_us": 5.057271957397461,
+   "unfused_us": 4.790056228637695,
+   "speedup": 0.9471620804633812,
+   "fused_bw_pct": 0.218346732244632,
+   "unfused_bw_pct": 0.23052731601946097,
+   "bytes": 36992,
+   "max_rel_diff": 0.05053907670314957
+  },
+  {
+   "tokens": 16,
+   "residual": false,
+   "fused_us": 4.877552032470703,
+   "unfused_us": 4.6859917640686035,
+   "speedup": 0.9607261455896626,
+   "fused_bw_pct": 1.2659151810321958,
+   "unfused_bw_pct": 1.3176649629486432,
+   "bytes": 206848,
+   "max_rel_diff": 0.05921540729740123
+  },
+  {
+   "tokens": 16,
+   "residual": true,
+   "fused_us": 5.066624164581299,
+   "unfused_us": 4.948207855224609,
+   "speedup": 0.9766281639391196,
+   "fused_bw_pct": 2.7631339407206217,
+   "unfused_bw_pct": 2.8292589162858386,
+   "bytes": 468992,
+   "max_rel_diff": 0.06239735395058818
+  },
+  {
+   "tokens": 64,
+   "residual": false,
+   "fused_us": 4.969624042510986,
+   "unfused_us": 4.862095832824707,
+   "speedup": 0.9783629085889667,
+   "fused_bw_pct": 4.822227297562205,
+   "unfused_bw_pct": 4.928873790316734,
+   "bytes": 802816,
+   "max_rel_diff": 0.053663935686022506
+  },
+  {
+   "tokens": 64,
+   "residual": true,
+   "fused_us": 5.171232223510742,
+   "unfused_us": 5.150752067565918,
+   "speedup": 0.9960395984825992,
+   "fused_bw_pct": 10.687091673152764,
+   "unfused_bw_pct": 10.729585138416025,
+   "bytes": 1851392,
+   "max_rel_diff": 0.05117270246667056
+  },
+  {
+   "tokens": 256,
+   "residual": false,
+   "fused_us": 6.403831958770752,
+   "unfused_us": 6.224743843078613,
+   "speedup": 0.9720342262499787,
+   "fused_bw_pct": 14.854389612002386,
+   "unfused_bw_pct": 15.281755735401719,
+   "bytes": 3186688,
+   "max_rel_diff": 0.05533202265349912
+  },
+  {
+   "tokens": 256,
+   "residual": true,
+   "fused_us": 6.904287815093994,
+   "unfused_us": 6.530896186828613,
+   "speedup": 0.9459188784903954,
+   "fused_bw_pct": 31.911780809790237,
+   "unfused_bw_pct": 33.736276477237325,
+   "bytes": 7380992,
+   "max_rel_diff": 0.05624570247631718
+  },
+  {
+   "tokens": 1024,
+   "residual": false,
+   "fused_us": 16.75173568725586,
+   "unfused_us": 12.352815628051758,
+   "speedup": 0.7374051178141112,
+   "fused_bw_pct": 22.67027458235908,
+   "unfused_bw_pct": 30.743310609994868,
+   "bytes": 12722176,
+   "max_rel_diff": 0.04742626236517902
+  },
+  {
+   "tokens": 1024,
+   "residual": true,
+   "fused_us": 18.966848373413086,
+   "unfused_us": 13.94655990600586,
+   "speedup": 0.7353124584238017,
+   "fused_bw_pct": 46.42726341957789,
+   "unfused_bw_pct": 63.13950333317931,
+   "bytes": 29499392,
+   "max_rel_diff": 0.05890319245686463
+  },
+  {
+   "tokens": 4096,
+   "residual": false,
+   "fused_us": 60.7751989364624,
+   "unfused_us": 49.92631912231445,
+   "speedup": 0.8214916610064915,
+   "fused_bw_pct": 24.982759508394572,
+   "unfused_bw_pct": 30.41145844108228,
+   "bytes": 50864128,
+   "max_rel_diff": 0.04985995123530077
+  },
+  {
+   "tokens": 4096,
+   "residual": true,
+   "fused_us": 71.57360076904297,
+   "unfused_us": 71.09151840209961,
+   "speedup": 0.9932645226485256,
+   "fused_bw_pct": 49.20224514217013,
+   "unfused_bw_pct": 49.535893027743555,
+   "bytes": 117972992,
+   "max_rel_diff": 0.061759215775535614
+  },
+  {
+   "tokens": 16384,
+   "residual": false,
+   "fused_us": 222.4407196044922,
+   "unfused_us": 181.34672164916992,
+   "speedup": 0.8152586539533369,
+   "fused_bw_pct": 27.299835728255648,
+   "unfused_bw_pct": 33.486103576912434,
+   "bytes": 203431936,
+   "max_rel_diff": 0.057725960867745535
+  },
+  {
+   "tokens": 16384,
+   "residual": true,
+   "fused_us": 260.943603515625,
+   "unfused_us": 269.67464447021484,
+   "speedup": 1.0334594940705915,
+   "fused_bw_pct": 53.97945610190575,
+   "unfused_bw_pct": 52.231806289079984,
+   "bytes": 471867392,
+   "max_rel_diff": 0.06161859209445413
+  }
+ ]
+}

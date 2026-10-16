@@ -1,0 +1,244 @@
+W1015 15:50:12.206000 71247 torch/_opaque_base.py:6] torch._opaque_base is deprecated, use torch._custom_class_base instead
+W1015 15:50:12.206000 71247 torch/_library/opaque_object.py:288] register_opaque_type is deprecated, use register_custom_class instead
+W1015 15:50:12.207000 71247 torch/_library/opaque_object.py:211] typ='value' is deprecated, use typ='constant' instead
+USDT:2026-10-15 15:50:32 71247:71247 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-15 15:50:32 71247:71247 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-15 15:50:32 71247:71247 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-15 15:50:32 71247:71247 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-15 15:50:32 71247:71247 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-15 15:50:32 71247:71247 SyncActivityProfilerHandler.cpp:46] profiler_stop
+qkv      M=   1 today=  13.81us prop_dg=  15.15us prop_fi=  14.98us | rel err today=2.52e-02 dg=2.49e-02 fi=2.49e-02
+    today    kernels: ['std::enable_if<(((8)>(0)))&&vllm::_typeConvert<c10::BFloat16>::exists, void>::type vllm::f', 'void tensorrt_llm::kernels::fp8_blockscale_gemm::scale_1x128_kernel<__nv_bfloat16, __nv_fp', 'void deep_gemm::fp8_gemm_kernel_swapAB<6144u, 4096u, 128u, 16u, 128u, 1u, 8u, 128u, 128u, ']
+    prop_dg  kernels: ['void vllm::rms_norm_per_block_quant_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, true, ', 'void deep_gemm::sm90_fp8_gemm_1d2d_impl<(cute::UMMA::Major)0, 0u, 6144u, 4096u, 1u, 16u, 4']
+    prop_fi  kernels: ['void vllm::rms_norm_per_block_quant_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, true, ', 'void deep_gemm::fp8_gemm_kernel_swapAB<6144u, 4096u, 128u, 16u, 128u, 1u, 8u, 128u, 128u, ']
+USDT:2026-10-15 15:50:32 71247:71247 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-15 15:50:32 71247:71247 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-15 15:50:32 71247:71247 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-15 15:50:32 71247:71247 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-15 15:50:32 71247:71247 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-15 15:50:32 71247:71247 SyncActivityProfilerHandler.cpp:46] profiler_stop
+qkv      M=   8 today=  13.62us prop_dg=  13.05us prop_fi=  14.29us | rel err today=2.56e-02 dg=2.54e-02 fi=2.54e-02
+    today    kernels: ['std::enable_if<(((8)>(0)))&&vllm::_typeConvert<c10::BFloat16>::exists, void>::type vllm::f', 'void tensorrt_llm::kernels::fp8_blockscale_gemm::scale_1x128_kernel<__nv_bfloat16, __nv_fp', 'void deep_gemm::fp8_gemm_kernel_swapAB<6144u, 4096u, 128u, 16u, 128u, 1u, 8u, 128u, 128u, ']
+    prop_dg  kernels: ['void vllm::rms_norm_per_block_quant_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, true, ', 'void deep_gemm::sm90_fp8_gemm_1d2d_impl<(cute::UMMA::Major)0, 0u, 6144u, 4096u, 1u, 16u, 4']
+    prop_fi  kernels: ['void vllm::rms_norm_per_block_quant_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, true, ', 'void deep_gemm::fp8_gemm_kernel_swapAB<6144u, 4096u, 128u, 16u, 128u, 1u, 8u, 128u, 128u, ']
+USDT:2026-10-15 15:50:32 71247:71247 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-15 15:50:32 71247:71247 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-15 15:50:32 71247:71247 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-15 15:50:32 71247:71247 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-15 15:50:33 71247:71247 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-15 15:50:33 71247:71247 SyncActivityProfilerHandler.cpp:46] profiler_stop
+qkv      M=  16 today=  13.50us prop_dg=  13.12us prop_fi=  14.08us | rel err today=2.57e-02 dg=2.55e-02 fi=2.55e-02
+    today    kernels: ['std::enable_if<(((8)>(0)))&&vllm::_typeConvert<c10::BFloat16>::exists, void>::type vllm::f', 'void tensorrt_llm::kernels::fp8_blockscale_gemm::scale_1x128_kernel<__nv_bfloat16, __nv_fp', 'void deep_gemm::fp8_gemm_kernel_swapAB<6144u, 4096u, 128u, 16u, 128u, 1u, 8u, 128u, 128u, ']
+    prop_dg  kernels: ['void vllm::rms_norm_per_block_quant_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, true, ', 'void deep_gemm::sm90_fp8_gemm_1d2d_impl<(cute::UMMA::Major)0, 0u, 6144u, 4096u, 1u, 16u, 4']
+    prop_fi  kernels: ['void vllm::rms_norm_per_block_quant_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, true, ', 'void deep_gemm::fp8_gemm_kernel_swapAB<6144u, 4096u, 128u, 16u, 128u, 1u, 8u, 128u, 128u, ']
+USDT:2026-10-15 15:50:35 71247:71247 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-15 15:50:35 71247:71247 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-15 15:50:35 71247:71247 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-15 15:50:35 71247:71247 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-15 15:50:35 71247:71247 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-15 15:50:35 71247:71247 SyncActivityProfilerHandler.cpp:46] profiler_stop
+qkv      M=  32 today=  12.96us prop_dg=  13.24us prop_fi=  17.32us | rel err today=2.70e-02 dg=2.55e-02 fi=2.55e-02
+    today    kernels: ['std::enable_if<(((8)>(0)))&&vllm::_typeConvert<c10::BFloat16>::exists, void>::type vllm::f', 'void per_token_group_quant_8bit_register_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, t', 'void deep_gemm::sm90_fp8_gemm_1d2d_impl<(cute::UMMA::Major)0, 0u, 6144u, 4096u, 1u, 32u, 4']
+    prop_dg  kernels: ['void vllm::rms_norm_per_block_quant_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, true, ', 'void deep_gemm::sm90_fp8_gemm_1d2d_impl<(cute::UMMA::Major)0, 0u, 6144u, 4096u, 1u, 32u, 4']
+    prop_fi  kernels: ['void vllm::rms_norm_per_block_quant_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, true, ', 'void deep_gemm::fp8_gemm_kernel<6144u, 4096u, 64u, 48u, 128u, 1u, 6u, 128u, 128u, 1u, deep']
+USDT:2026-10-15 15:50:35 71247:71247 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-15 15:50:35 71247:71247 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-15 15:50:35 71247:71247 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-15 15:50:35 71247:71247 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-15 15:50:36 71247:71247 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-15 15:50:36 71247:71247 SyncActivityProfilerHandler.cpp:46] profiler_stop
+qkv      M=  64 today=  12.04us prop_dg=  12.57us prop_fi=  12.52us | rel err today=2.69e-02 dg=2.54e-02 fi=2.54e-02
+    today    kernels: ['std::enable_if<(((8)>(0)))&&vllm::_typeConvert<c10::BFloat16>::exists, void>::type vllm::f', 'void per_token_group_quant_8bit_register_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, t', 'void deep_gemm::sm90_fp8_gemm_1d2d_impl<(cute::UMMA::Major)0, 0u, 6144u, 4096u, 1u, 64u, 4']
+    prop_dg  kernels: ['void vllm::rms_norm_per_block_quant_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, true, ', 'void deep_gemm::sm90_fp8_gemm_1d2d_impl<(cute::UMMA::Major)0, 0u, 6144u, 4096u, 1u, 64u, 4']
+    prop_fi  kernels: ['void vllm::rms_norm_per_block_quant_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, true, ', 'void deep_gemm::fp8_gemm_kernel<6144u, 4096u, 64u, 48u, 128u, 1u, 6u, 128u, 128u, 1u, deep']
+USDT:2026-10-15 15:50:38 71247:71247 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-15 15:50:38 71247:71247 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-15 15:50:38 71247:71247 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-15 15:50:38 71247:71247 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-15 15:50:39 71247:71247 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-15 15:50:39 71247:71247 SyncActivityProfilerHandler.cpp:46] profiler_stop
+qkv      M= 256 today=  18.99us prop_dg=  19.08us prop_fi=  20.96us | rel err today=2.68e-02 dg=2.54e-02 fi=2.54e-02
+    today    kernels: ['std::enable_if<(((8)>(0)))&&vllm::_typeConvert<c10::BFloat16>::exists, void>::type vllm::f', 'void per_token_group_quant_8bit_register_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, t', 'void deep_gemm::sm90_fp8_gemm_1d2d_impl<(cute::UMMA::Major)0, 0u, 6144u, 4096u, 1u, 128u, ']
+    prop_dg  kernels: ['void vllm::rms_norm_per_block_quant_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, true, ', 'void deep_gemm::sm90_fp8_gemm_1d2d_impl<(cute::UMMA::Major)0, 0u, 6144u, 4096u, 1u, 128u, ']
+    prop_fi  kernels: ['void vllm::rms_norm_per_block_quant_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, true, ', 'void deep_gemm::fp8_gemm_kernel<6144u, 4096u, 128u, 96u, 128u, 1u, 6u, 128u, 128u, 1u, dee']
+USDT:2026-10-15 15:50:39 71247:71247 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-15 15:50:39 71247:71247 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-15 15:50:39 71247:71247 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-15 15:50:39 71247:71247 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-15 15:50:39 71247:71247 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-15 15:50:39 71247:71247 SyncActivityProfilerHandler.cpp:46] profiler_stop
+o_proj   M=   1 today=  10.23us prop_dg=  10.86us prop_fi=  10.98us | rel err today=2.64e-02 dg=2.64e-02 fi=2.64e-02
+    today    kernels: ['void tensorrt_llm::kernels::fp8_blockscale_gemm::scale_1x128_kernel<__nv_bfloat16, __nv_fp', 'void deep_gemm::fp8_gemm_kernel_swapAB<4096u, 4096u, 128u, 16u, 128u, 1u, 8u, 128u, 128u, ']
+    prop_dg  kernels: ['void per_token_group_quant_8bit_register_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, f', 'void deep_gemm::sm90_fp8_gemm_1d2d_impl<(cute::UMMA::Major)0, 0u, 4096u, 4096u, 1u, 16u, 3']
+    prop_fi  kernels: ['void per_token_group_quant_8bit_register_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, f', 'void deep_gemm::fp8_gemm_kernel_swapAB<4096u, 4096u, 128u, 16u, 128u, 1u, 8u, 128u, 128u, ']
+USDT:2026-10-15 15:50:39 71247:71247 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-15 15:50:39 71247:71247 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-15 15:50:39 71247:71247 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-15 15:50:39 71247:71247 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-15 15:50:39 71247:71247 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-15 15:50:39 71247:71247 SyncActivityProfilerHandler.cpp:46] profiler_stop
+o_proj   M=   8 today=   9.88us prop_dg=   8.62us prop_fi=  10.63us | rel err today=2.55e-02 dg=2.55e-02 fi=2.55e-02
+    today    kernels: ['void tensorrt_llm::kernels::fp8_blockscale_gemm::scale_1x128_kernel<__nv_bfloat16, __nv_fp', 'void deep_gemm::fp8_gemm_kernel_swapAB<4096u, 4096u, 128u, 16u, 128u, 1u, 8u, 128u, 128u, ']
+    prop_dg  kernels: ['void per_token_group_quant_8bit_register_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, f', 'void deep_gemm::sm90_fp8_gemm_1d2d_impl<(cute::UMMA::Major)0, 0u, 4096u, 4096u, 1u, 16u, 3']
+    prop_fi  kernels: ['void per_token_group_quant_8bit_register_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, f', 'void deep_gemm::fp8_gemm_kernel_swapAB<4096u, 4096u, 128u, 16u, 128u, 1u, 8u, 128u, 128u, ']
+USDT:2026-10-15 15:50:39 71247:71247 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-15 15:50:39 71247:71247 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-15 15:50:39 71247:71247 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-15 15:50:39 71247:71247 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-15 15:50:39 71247:71247 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-15 15:50:39 71247:71247 SyncActivityProfilerHandler.cpp:46] profiler_stop
+o_proj   M=  16 today=   9.73us prop_dg=   8.67us prop_fi=  10.54us | rel err today=2.58e-02 dg=2.58e-02 fi=2.58e-02
+    today    kernels: ['void tensorrt_llm::kernels::fp8_blockscale_gemm::scale_1x128_kernel<__nv_bfloat16, __nv_fp', 'void deep_gemm::fp8_gemm_kernel_swapAB<4096u, 4096u, 128u, 16u, 128u, 1u, 8u, 128u, 128u, ']
+    prop_dg  kernels: ['void per_token_group_quant_8bit_register_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, f', 'void deep_gemm::sm90_fp8_gemm_1d2d_impl<(cute::UMMA::Major)0, 0u, 4096u, 4096u, 1u, 16u, 3']
+    prop_fi  kernels: ['void per_token_group_quant_8bit_register_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, f', 'void deep_gemm::fp8_gemm_kernel_swapAB<4096u, 4096u, 128u, 16u, 128u, 1u, 8u, 128u, 128u, ']
+USDT:2026-10-15 15:50:42 71247:71247 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-15 15:50:42 71247:71247 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-15 15:50:42 71247:71247 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-15 15:50:42 71247:71247 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-15 15:50:42 71247:71247 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-15 15:50:42 71247:71247 SyncActivityProfilerHandler.cpp:46] profiler_stop
+o_proj   M=  32 today=   9.04us prop_dg=   8.84us prop_fi=  13.29us | rel err today=2.66e-02 dg=2.59e-02 fi=2.59e-02
+    today    kernels: ['void per_token_group_quant_8bit_register_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, t', 'void deep_gemm::sm90_fp8_gemm_1d2d_impl<(cute::UMMA::Major)0, 0u, 4096u, 4096u, 1u, 32u, 3']
+    prop_dg  kernels: ['void per_token_group_quant_8bit_register_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, f', 'void deep_gemm::sm90_fp8_gemm_1d2d_impl<(cute::UMMA::Major)0, 0u, 4096u, 4096u, 1u, 32u, 3']
+    prop_fi  kernels: ['void per_token_group_quant_8bit_register_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, f', 'void deep_gemm::fp8_gemm_kernel<4096u, 4096u, 64u, 32u, 128u, 1u, 8u, 128u, 128u, 1u, deep']
+USDT:2026-10-15 15:50:42 71247:71247 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-15 15:50:42 71247:71247 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-15 15:50:42 71247:71247 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-15 15:50:42 71247:71247 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-15 15:50:42 71247:71247 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-15 15:50:42 71247:71247 SyncActivityProfilerHandler.cpp:46] profiler_stop
+o_proj   M=  64 today=   8.38us prop_dg=   7.97us prop_fi=   9.00us | rel err today=2.67e-02 dg=2.57e-02 fi=2.57e-02
+    today    kernels: ['void per_token_group_quant_8bit_register_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, t', 'void deep_gemm::sm90_fp8_gemm_1d2d_impl<(cute::UMMA::Major)0, 0u, 4096u, 4096u, 1u, 64u, 3']
+    prop_dg  kernels: ['void per_token_group_quant_8bit_register_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, f', 'void deep_gemm::sm90_fp8_gemm_1d2d_impl<(cute::UMMA::Major)0, 0u, 4096u, 4096u, 1u, 64u, 3']
+    prop_fi  kernels: ['void per_token_group_quant_8bit_register_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, f', 'void deep_gemm::fp8_gemm_kernel<4096u, 4096u, 64u, 32u, 128u, 1u, 8u, 128u, 128u, 1u, deep']
+USDT:2026-10-15 15:50:44 71247:71247 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-15 15:50:44 71247:71247 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-15 15:50:44 71247:71247 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-15 15:50:44 71247:71247 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-15 15:50:44 71247:71247 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-15 15:50:44 71247:71247 SyncActivityProfilerHandler.cpp:46] profiler_stop
+o_proj   M= 256 today=  12.26us prop_dg=  12.08us prop_fi=  14.29us | rel err today=2.67e-02 dg=2.57e-02 fi=2.57e-02
+    today    kernels: ['void per_token_group_quant_8bit_register_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, t', 'void deep_gemm::sm90_fp8_gemm_1d2d_impl<(cute::UMMA::Major)0, 0u, 4096u, 4096u, 1u, 64u, 1']
+    prop_dg  kernels: ['void per_token_group_quant_8bit_register_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, f', 'void deep_gemm::sm90_fp8_gemm_1d2d_impl<(cute::UMMA::Major)0, 0u, 4096u, 4096u, 1u, 64u, 1']
+    prop_fi  kernels: ['void per_token_group_quant_8bit_register_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, f', 'void deep_gemm::fp8_gemm_kernel<4096u, 4096u, 128u, 64u, 128u, 1u, 8u, 128u, 128u, 1u, dee']
+USDT:2026-10-15 15:50:45 71247:71247 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-15 15:50:45 71247:71247 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-15 15:50:45 71247:71247 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-15 15:50:45 71247:71247 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-15 15:50:45 71247:71247 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-15 15:50:45 71247:71247 SyncActivityProfilerHandler.cpp:46] profiler_stop
+gate_up  M=   1 today=  39.99us prop_dg=  43.07us prop_fi=  41.34us | rel err today=2.56e-02 dg=2.54e-02 fi=2.54e-02
+    today    kernels: ['std::enable_if<(((8)>(0)))&&vllm::_typeConvert<c10::BFloat16>::exists, void>::type vllm::f', 'void tensorrt_llm::kernels::fp8_blockscale_gemm::scale_1x128_kernel<__nv_bfloat16, __nv_fp', 'void deep_gemm::fp8_gemm_kernel_swapAB<24576u, 4096u, 128u, 16u, 128u, 1u, 8u, 128u, 128u,']
+    prop_dg  kernels: ['void vllm::rms_norm_per_block_quant_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, true, ', 'void deep_gemm::sm90_fp8_gemm_1d2d_impl<(cute::UMMA::Major)0, 0u, 24576u, 4096u, 1u, 16u, ']
+    prop_fi  kernels: ['void vllm::rms_norm_per_block_quant_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, true, ', 'void deep_gemm::fp8_gemm_kernel_swapAB<24576u, 4096u, 128u, 16u, 128u, 1u, 8u, 128u, 128u,']
+USDT:2026-10-15 15:50:45 71247:71247 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-15 15:50:45 71247:71247 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-15 15:50:45 71247:71247 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-15 15:50:45 71247:71247 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-15 15:50:46 71247:71247 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-15 15:50:46 71247:71247 SyncActivityProfilerHandler.cpp:46] profiler_stop
+gate_up  M=   8 today=  40.96us prop_dg=  43.64us prop_fi=  42.10us | rel err today=2.58e-02 dg=2.56e-02 fi=2.56e-02
+    today    kernels: ['std::enable_if<(((8)>(0)))&&vllm::_typeConvert<c10::BFloat16>::exists, void>::type vllm::f', 'void tensorrt_llm::kernels::fp8_blockscale_gemm::scale_1x128_kernel<__nv_bfloat16, __nv_fp', 'void deep_gemm::fp8_gemm_kernel_swapAB<24576u, 4096u, 128u, 16u, 128u, 1u, 8u, 128u, 128u,']
+    prop_dg  kernels: ['void vllm::rms_norm_per_block_quant_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, true, ', 'void deep_gemm::sm90_fp8_gemm_1d2d_impl<(cute::UMMA::Major)0, 0u, 24576u, 4096u, 1u, 16u, ']
+    prop_fi  kernels: ['void vllm::rms_norm_per_block_quant_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, true, ', 'void deep_gemm::fp8_gemm_kernel_swapAB<24576u, 4096u, 128u, 16u, 128u, 1u, 8u, 128u, 128u,']
+USDT:2026-10-15 15:50:46 71247:71247 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-15 15:50:46 71247:71247 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-15 15:50:46 71247:71247 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-15 15:50:46 71247:71247 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-15 15:50:46 71247:71247 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-15 15:50:46 71247:71247 SyncActivityProfilerHandler.cpp:46] profiler_stop
+gate_up  M=  16 today=  41.44us prop_dg=  43.55us prop_fi=  42.45us | rel err today=2.57e-02 dg=2.55e-02 fi=2.55e-02
+    today    kernels: ['std::enable_if<(((8)>(0)))&&vllm::_typeConvert<c10::BFloat16>::exists, void>::type vllm::f', 'void tensorrt_llm::kernels::fp8_blockscale_gemm::scale_1x128_kernel<__nv_bfloat16, __nv_fp', 'void deep_gemm::fp8_gemm_kernel_swapAB<24576u, 4096u, 128u, 16u, 128u, 1u, 8u, 128u, 128u,']
+    prop_dg  kernels: ['void vllm::rms_norm_per_block_quant_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, true, ', 'void deep_gemm::sm90_fp8_gemm_1d2d_impl<(cute::UMMA::Major)0, 0u, 24576u, 4096u, 1u, 16u, ']
+    prop_fi  kernels: ['void vllm::rms_norm_per_block_quant_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, true, ', 'void deep_gemm::fp8_gemm_kernel_swapAB<24576u, 4096u, 128u, 16u, 128u, 1u, 8u, 128u, 128u,']
+USDT:2026-10-15 15:50:49 71247:71247 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-15 15:50:49 71247:71247 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-15 15:50:49 71247:71247 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-15 15:50:49 71247:71247 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-15 15:50:50 71247:71247 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-15 15:50:50 71247:71247 SyncActivityProfilerHandler.cpp:46] profiler_stop
+gate_up  M=  32 today=  43.61us prop_dg=  44.01us prop_fi=  43.41us | rel err today=2.71e-02 dg=2.55e-02 fi=2.55e-02
+    today    kernels: ['std::enable_if<(((8)>(0)))&&vllm::_typeConvert<c10::BFloat16>::exists, void>::type vllm::f', 'void per_token_group_quant_8bit_register_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, t', 'void deep_gemm::sm90_fp8_gemm_1d2d_impl<(cute::UMMA::Major)0, 0u, 24576u, 4096u, 1u, 32u, ']
+    prop_dg  kernels: ['void vllm::rms_norm_per_block_quant_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, true, ', 'void deep_gemm::sm90_fp8_gemm_1d2d_impl<(cute::UMMA::Major)0, 0u, 24576u, 4096u, 1u, 32u, ']
+    prop_fi  kernels: ['void vllm::rms_norm_per_block_quant_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, true, ', 'void deep_gemm::fp8_gemm_kernel<24576u, 4096u, 64u, 96u, 128u, 1u, 6u, 128u, 128u, 1u, dee']
+USDT:2026-10-15 15:50:50 71247:71247 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-15 15:50:50 71247:71247 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-15 15:50:50 71247:71247 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-15 15:50:50 71247:71247 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-15 15:50:50 71247:71247 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-15 15:50:50 71247:71247 SyncActivityProfilerHandler.cpp:46] profiler_stop
+gate_up  M=  64 today=  44.24us prop_dg=  44.66us prop_fi=  44.35us | rel err today=2.69e-02 dg=2.55e-02 fi=2.55e-02
+    today    kernels: ['std::enable_if<(((8)>(0)))&&vllm::_typeConvert<c10::BFloat16>::exists, void>::type vllm::f', 'void per_token_group_quant_8bit_register_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, t', 'void deep_gemm::sm90_fp8_gemm_1d2d_impl<(cute::UMMA::Major)0, 0u, 24576u, 4096u, 1u, 64u, ']
+    prop_dg  kernels: ['void vllm::rms_norm_per_block_quant_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, true, ', 'void deep_gemm::sm90_fp8_gemm_1d2d_impl<(cute::UMMA::Major)0, 0u, 24576u, 4096u, 1u, 64u, ']
+    prop_fi  kernels: ['void vllm::rms_norm_per_block_quant_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, true, ', 'void deep_gemm::fp8_gemm_kernel<24576u, 4096u, 64u, 96u, 128u, 1u, 6u, 128u, 128u, 1u, dee']
+USDT:2026-10-15 15:50:53 71247:71247 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-15 15:50:53 71247:71247 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-15 15:50:54 71247:71247 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-15 15:50:54 71247:71247 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-15 15:50:54 71247:71247 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-15 15:50:54 71247:71247 SyncActivityProfilerHandler.cpp:46] profiler_stop
+gate_up  M= 256 today=  57.55us prop_dg=  60.03us prop_fi=  67.26us | rel err today=2.69e-02 dg=2.55e-02 fi=2.55e-02
+    today    kernels: ['std::enable_if<(((8)>(0)))&&vllm::_typeConvert<c10::BFloat16>::exists, void>::type vllm::f', 'void per_token_group_quant_8bit_register_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, t', 'void deep_gemm::sm90_fp8_gemm_1d2d_impl<(cute::UMMA::Major)0, 0u, 24576u, 4096u, 1u, 128u,']
+    prop_dg  kernels: ['void vllm::rms_norm_per_block_quant_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, true, ', 'void deep_gemm::sm90_fp8_gemm_1d2d_impl<(cute::UMMA::Major)0, 0u, 24576u, 4096u, 1u, 128u,']
+    prop_fi  kernels: ['void vllm::rms_norm_per_block_quant_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, true, ', 'void deep_gemm::fp8_gemm_kernel<24576u, 4096u, 128u, 128u, 128u, 1u, 5u, 128u, 128u, 1u, d']
+USDT:2026-10-15 15:50:54 71247:71247 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-15 15:50:54 71247:71247 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-15 15:50:54 71247:71247 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-15 15:50:54 71247:71247 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-15 15:50:55 71247:71247 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-15 15:50:55 71247:71247 SyncActivityProfilerHandler.cpp:46] profiler_stop
+down     M=   1 today=  23.97us prop_dg=  27.50us prop_fi=  24.71us | rel err today=2.61e-02 dg=2.61e-02 fi=2.61e-02
+    today    kernels: ['void tensorrt_llm::kernels::fp8_blockscale_gemm::scale_1x128_kernel<__nv_bfloat16, __nv_fp', 'void deep_gemm::fp8_gemm_kernel_swapAB<4096u, 12288u, 128u, 16u, 128u, 1u, 8u, 128u, 128u,']
+    prop_dg  kernels: ['void per_token_group_quant_8bit_register_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, f', 'void deep_gemm::sm90_fp8_gemm_1d2d_impl<(cute::UMMA::Major)0, 0u, 4096u, 12288u, 1u, 16u, ']
+    prop_fi  kernels: ['void per_token_group_quant_8bit_register_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, f', 'void deep_gemm::fp8_gemm_kernel_swapAB<4096u, 12288u, 128u, 16u, 128u, 1u, 8u, 128u, 128u,']
+USDT:2026-10-15 15:50:55 71247:71247 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-15 15:50:55 71247:71247 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-15 15:50:55 71247:71247 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-15 15:50:55 71247:71247 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-15 15:50:55 71247:71247 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-15 15:50:55 71247:71247 SyncActivityProfilerHandler.cpp:46] profiler_stop
+down     M=   8 today=  23.79us prop_dg=  23.19us prop_fi=  24.81us | rel err today=2.56e-02 dg=2.56e-02 fi=2.56e-02
+    today    kernels: ['void tensorrt_llm::kernels::fp8_blockscale_gemm::scale_1x128_kernel<__nv_bfloat16, __nv_fp', 'void deep_gemm::fp8_gemm_kernel_swapAB<4096u, 12288u, 128u, 16u, 128u, 1u, 8u, 128u, 128u,']
+    prop_dg  kernels: ['void per_token_group_quant_8bit_register_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, f', 'void deep_gemm::sm90_fp8_gemm_1d2d_impl<(cute::UMMA::Major)0, 0u, 4096u, 12288u, 1u, 16u, ']
+    prop_fi  kernels: ['void per_token_group_quant_8bit_register_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, f', 'void deep_gemm::fp8_gemm_kernel_swapAB<4096u, 12288u, 128u, 16u, 128u, 1u, 8u, 128u, 128u,']
+USDT:2026-10-15 15:50:55 71247:71247 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-15 15:50:55 71247:71247 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-15 15:50:55 71247:71247 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-15 15:50:55 71247:71247 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-15 15:50:56 71247:71247 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-15 15:50:56 71247:71247 SyncActivityProfilerHandler.cpp:46] profiler_stop
+down     M=  16 today=  24.09us prop_dg=  23.37us prop_fi=  25.14us | rel err today=2.56e-02 dg=2.56e-02 fi=2.56e-02
+    today    kernels: ['void tensorrt_llm::kernels::fp8_blockscale_gemm::scale_1x128_kernel<__nv_bfloat16, __nv_fp', 'void deep_gemm::fp8_gemm_kernel_swapAB<4096u, 12288u, 128u, 16u, 128u, 1u, 8u, 128u, 128u,']
+    prop_dg  kernels: ['void per_token_group_quant_8bit_register_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, f', 'void deep_gemm::sm90_fp8_gemm_1d2d_impl<(cute::UMMA::Major)0, 0u, 4096u, 12288u, 1u, 16u, ']
+    prop_fi  kernels: ['void per_token_group_quant_8bit_register_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, f', 'void deep_gemm::fp8_gemm_kernel_swapAB<4096u, 12288u, 128u, 16u, 128u, 1u, 8u, 128u, 128u,']
+USDT:2026-10-15 15:50:58 71247:71247 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-15 15:50:58 71247:71247 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-15 15:50:58 71247:71247 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-15 15:50:58 71247:71247 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-15 15:50:58 71247:71247 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-15 15:50:58 71247:71247 SyncActivityProfilerHandler.cpp:46] profiler_stop
+down     M=  32 today=  23.21us prop_dg=  23.15us prop_fi=  32.15us | rel err today=2.68e-02 dg=2.58e-02 fi=2.58e-02
+    today    kernels: ['void per_token_group_quant_8bit_register_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, t', 'void deep_gemm::sm90_fp8_gemm_1d2d_impl<(cute::UMMA::Major)0, 0u, 4096u, 12288u, 1u, 32u, ']
+    prop_dg  kernels: ['void per_token_group_quant_8bit_register_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, f', 'void deep_gemm::sm90_fp8_gemm_1d2d_impl<(cute::UMMA::Major)0, 0u, 4096u, 12288u, 1u, 32u, ']
+    prop_fi  kernels: ['void per_token_group_quant_8bit_register_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, f', 'void deep_gemm::fp8_gemm_kernel<4096u, 12288u, 64u, 32u, 128u, 1u, 8u, 128u, 128u, 1u, dee']
+USDT:2026-10-15 15:50:58 71247:71247 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-15 15:50:58 71247:71247 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-15 15:50:59 71247:71247 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-15 15:50:59 71247:71247 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-15 15:50:59 71247:71247 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-15 15:50:59 71247:71247 SyncActivityProfilerHandler.cpp:46] profiler_stop
+down     M=  64 today=  23.85us prop_dg=  24.41us prop_fi=  25.61us | rel err today=2.67e-02 dg=2.58e-02 fi=2.58e-02
+    today    kernels: ['void per_token_group_quant_8bit_register_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, t', 'void deep_gemm::sm90_fp8_gemm_1d2d_impl<(cute::UMMA::Major)0, 0u, 4096u, 12288u, 1u, 64u, ']
+    prop_dg  kernels: ['void per_token_group_quant_8bit_register_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, f', 'void deep_gemm::sm90_fp8_gemm_1d2d_impl<(cute::UMMA::Major)0, 0u, 4096u, 12288u, 1u, 64u, ']
+    prop_fi  kernels: ['void per_token_group_quant_8bit_register_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, f', 'void deep_gemm::fp8_gemm_kernel<4096u, 12288u, 64u, 32u, 128u, 1u, 8u, 128u, 128u, 1u, dee']
+USDT:2026-10-15 15:51:01 71247:71247 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-15 15:51:01 71247:71247 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-15 15:51:01 71247:71247 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-15 15:51:01 71247:71247 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-15 15:51:01 71247:71247 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-15 15:51:01 71247:71247 SyncActivityProfilerHandler.cpp:46] profiler_stop
+down     M= 256 today=  35.71us prop_dg=  35.23us prop_fi=  39.46us | rel err today=2.67e-02 dg=2.58e-02 fi=2.58e-02
+    today    kernels: ['void per_token_group_quant_8bit_register_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, t', 'void deep_gemm::sm90_fp8_gemm_1d2d_impl<(cute::UMMA::Major)0, 0u, 4096u, 12288u, 1u, 64u, ']
+    prop_dg  kernels: ['void per_token_group_quant_8bit_register_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, f', 'void deep_gemm::sm90_fp8_gemm_1d2d_impl<(cute::UMMA::Major)0, 0u, 4096u, 12288u, 1u, 64u, ']
+    prop_fi  kernels: ['void per_token_group_quant_8bit_register_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, f', 'void deep_gemm::fp8_gemm_kernel<4096u, 12288u, 128u, 64u, 128u, 1u, 8u, 128u, 128u, 1u, de']
+P5_EXIT=0

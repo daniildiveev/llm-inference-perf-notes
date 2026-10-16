@@ -1,0 +1,929 @@
+{
+ "rows": [
+  {
+   "shape": "qkv",
+   "K": 4096,
+   "N": 6144,
+   "M": 1,
+   "norm_in_path": true,
+   "e8m0": true,
+   "today": {
+    "max_abs": 0.10231202840805054,
+    "rel_fro": 0.02516694739460945,
+    "ref_max": 3.7012171745300293,
+    "kernels": [
+     "std::enable_if<(((8)>(0)))&&vllm::_typeConvert<c10::BFloat16>::exists, void>::type vllm::f",
+     "void tensorrt_llm::kernels::fp8_blockscale_gemm::scale_1x128_kernel<__nv_bfloat16, __nv_fp",
+     "void deep_gemm::fp8_gemm_kernel_swapAB<6144u, 4096u, 128u, 16u, 128u, 1u, 8u, 128u, 128u, "
+    ],
+    "us": 13.813920021057129
+   },
+   "prop_dg": {
+    "max_abs": 0.09572792053222656,
+    "rel_fro": 0.024910615757107735,
+    "ref_max": 3.7012171745300293,
+    "kernels": [
+     "void vllm::rms_norm_per_block_quant_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, true, ",
+     "void deep_gemm::sm90_fp8_gemm_1d2d_impl<(cute::UMMA::Major)0, 0u, 6144u, 4096u, 1u, 16u, 4"
+    ],
+    "us": 15.146431922912598
+   },
+   "prop_fi": {
+    "max_abs": 0.09572792053222656,
+    "rel_fro": 0.024910615757107735,
+    "ref_max": 3.7012171745300293,
+    "kernels": [
+     "void vllm::rms_norm_per_block_quant_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, true, ",
+     "void deep_gemm::fp8_gemm_kernel_swapAB<6144u, 4096u, 128u, 16u, 128u, 1u, 8u, 128u, 128u, "
+    ],
+    "us": 14.975711822509766
+   }
+  },
+  {
+   "shape": "qkv",
+   "K": 4096,
+   "N": 6144,
+   "M": 8,
+   "norm_in_path": true,
+   "e8m0": true,
+   "today": {
+    "max_abs": 0.1346113085746765,
+    "rel_fro": 0.025631088763475418,
+    "ref_max": 4.288699150085449,
+    "kernels": [
+     "std::enable_if<(((8)>(0)))&&vllm::_typeConvert<c10::BFloat16>::exists, void>::type vllm::f",
+     "void tensorrt_llm::kernels::fp8_blockscale_gemm::scale_1x128_kernel<__nv_bfloat16, __nv_fp",
+     "void deep_gemm::fp8_gemm_kernel_swapAB<6144u, 4096u, 128u, 16u, 128u, 1u, 8u, 128u, 128u, "
+    ],
+    "us": 13.62172794342041
+   },
+   "prop_dg": {
+    "max_abs": 0.1107645034790039,
+    "rel_fro": 0.02540208026766777,
+    "ref_max": 4.288699150085449,
+    "kernels": [
+     "void vllm::rms_norm_per_block_quant_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, true, ",
+     "void deep_gemm::sm90_fp8_gemm_1d2d_impl<(cute::UMMA::Major)0, 0u, 6144u, 4096u, 1u, 16u, 4"
+    ],
+    "us": 13.047679901123047
+   },
+   "prop_fi": {
+    "max_abs": 0.1107645034790039,
+    "rel_fro": 0.02540208026766777,
+    "ref_max": 4.288699150085449,
+    "kernels": [
+     "void vllm::rms_norm_per_block_quant_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, true, ",
+     "void deep_gemm::fp8_gemm_kernel_swapAB<6144u, 4096u, 128u, 16u, 128u, 1u, 8u, 128u, 128u, "
+    ],
+    "us": 14.29036808013916
+   }
+  },
+  {
+   "shape": "qkv",
+   "K": 4096,
+   "N": 6144,
+   "M": 16,
+   "norm_in_path": true,
+   "e8m0": true,
+   "today": {
+    "max_abs": 0.12476968765258789,
+    "rel_fro": 0.02568749152123928,
+    "ref_max": 4.164045810699463,
+    "kernels": [
+     "std::enable_if<(((8)>(0)))&&vllm::_typeConvert<c10::BFloat16>::exists, void>::type vllm::f",
+     "void tensorrt_llm::kernels::fp8_blockscale_gemm::scale_1x128_kernel<__nv_bfloat16, __nv_fp",
+     "void deep_gemm::fp8_gemm_kernel_swapAB<6144u, 4096u, 128u, 16u, 128u, 1u, 8u, 128u, 128u, "
+    ],
+    "us": 13.49897575378418
+   },
+   "prop_dg": {
+    "max_abs": 0.12362396717071533,
+    "rel_fro": 0.025497127324342728,
+    "ref_max": 4.164045810699463,
+    "kernels": [
+     "void vllm::rms_norm_per_block_quant_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, true, ",
+     "void deep_gemm::sm90_fp8_gemm_1d2d_impl<(cute::UMMA::Major)0, 0u, 6144u, 4096u, 1u, 16u, 4"
+    ],
+    "us": 13.11616039276123
+   },
+   "prop_fi": {
+    "max_abs": 0.12362396717071533,
+    "rel_fro": 0.025497127324342728,
+    "ref_max": 4.164045810699463,
+    "kernels": [
+     "void vllm::rms_norm_per_block_quant_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, true, ",
+     "void deep_gemm::fp8_gemm_kernel_swapAB<6144u, 4096u, 128u, 16u, 128u, 1u, 8u, 128u, 128u, "
+    ],
+    "us": 14.075936317443848
+   }
+  },
+  {
+   "shape": "qkv",
+   "K": 4096,
+   "N": 6144,
+   "M": 32,
+   "norm_in_path": true,
+   "e8m0": true,
+   "today": {
+    "max_abs": 0.12628626823425293,
+    "rel_fro": 0.026960227638483047,
+    "ref_max": 4.669184684753418,
+    "kernels": [
+     "std::enable_if<(((8)>(0)))&&vllm::_typeConvert<c10::BFloat16>::exists, void>::type vllm::f",
+     "void per_token_group_quant_8bit_register_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, t",
+     "void deep_gemm::sm90_fp8_gemm_1d2d_impl<(cute::UMMA::Major)0, 0u, 6144u, 4096u, 1u, 32u, 4"
+    ],
+    "us": 12.957632064819336
+   },
+   "prop_dg": {
+    "max_abs": 0.12036475539207458,
+    "rel_fro": 0.02546125464141369,
+    "ref_max": 4.669184684753418,
+    "kernels": [
+     "void vllm::rms_norm_per_block_quant_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, true, ",
+     "void deep_gemm::sm90_fp8_gemm_1d2d_impl<(cute::UMMA::Major)0, 0u, 6144u, 4096u, 1u, 32u, 4"
+    ],
+    "us": 13.240544319152832
+   },
+   "prop_fi": {
+    "max_abs": 0.12036475539207458,
+    "rel_fro": 0.02546125464141369,
+    "ref_max": 4.669184684753418,
+    "kernels": [
+     "void vllm::rms_norm_per_block_quant_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, true, ",
+     "void deep_gemm::fp8_gemm_kernel<6144u, 4096u, 64u, 48u, 128u, 1u, 6u, 128u, 128u, 1u, deep"
+    ],
+    "us": 17.322879791259766
+   }
+  },
+  {
+   "shape": "qkv",
+   "K": 4096,
+   "N": 6144,
+   "M": 64,
+   "norm_in_path": true,
+   "e8m0": true,
+   "today": {
+    "max_abs": 0.12624871730804443,
+    "rel_fro": 0.026864169165492058,
+    "ref_max": 5.0101518630981445,
+    "kernels": [
+     "std::enable_if<(((8)>(0)))&&vllm::_typeConvert<c10::BFloat16>::exists, void>::type vllm::f",
+     "void per_token_group_quant_8bit_register_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, t",
+     "void deep_gemm::sm90_fp8_gemm_1d2d_impl<(cute::UMMA::Major)0, 0u, 6144u, 4096u, 1u, 64u, 4"
+    ],
+    "us": 12.041248321533203
+   },
+   "prop_dg": {
+    "max_abs": 0.12018346786499023,
+    "rel_fro": 0.025386547669768333,
+    "ref_max": 5.0101518630981445,
+    "kernels": [
+     "void vllm::rms_norm_per_block_quant_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, true, ",
+     "void deep_gemm::sm90_fp8_gemm_1d2d_impl<(cute::UMMA::Major)0, 0u, 6144u, 4096u, 1u, 64u, 4"
+    ],
+    "us": 12.565631866455078
+   },
+   "prop_fi": {
+    "max_abs": 0.12018346786499023,
+    "rel_fro": 0.025386547669768333,
+    "ref_max": 5.0101518630981445,
+    "kernels": [
+     "void vllm::rms_norm_per_block_quant_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, true, ",
+     "void deep_gemm::fp8_gemm_kernel<6144u, 4096u, 64u, 48u, 128u, 1u, 6u, 128u, 128u, 1u, deep"
+    ],
+    "us": 12.51683235168457
+   }
+  },
+  {
+   "shape": "qkv",
+   "K": 4096,
+   "N": 6144,
+   "M": 256,
+   "norm_in_path": true,
+   "e8m0": true,
+   "today": {
+    "max_abs": 0.140344500541687,
+    "rel_fro": 0.026834791526198387,
+    "ref_max": 5.390863418579102,
+    "kernels": [
+     "std::enable_if<(((8)>(0)))&&vllm::_typeConvert<c10::BFloat16>::exists, void>::type vllm::f",
+     "void per_token_group_quant_8bit_register_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, t",
+     "void deep_gemm::sm90_fp8_gemm_1d2d_impl<(cute::UMMA::Major)0, 0u, 6144u, 4096u, 1u, 128u, "
+    ],
+    "us": 18.9935359954834
+   },
+   "prop_dg": {
+    "max_abs": 0.12848126888275146,
+    "rel_fro": 0.025418467819690704,
+    "ref_max": 5.390863418579102,
+    "kernels": [
+     "void vllm::rms_norm_per_block_quant_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, true, ",
+     "void deep_gemm::sm90_fp8_gemm_1d2d_impl<(cute::UMMA::Major)0, 0u, 6144u, 4096u, 1u, 128u, "
+    ],
+    "us": 19.079872131347656
+   },
+   "prop_fi": {
+    "max_abs": 0.12848126888275146,
+    "rel_fro": 0.025418467819690704,
+    "ref_max": 5.390863418579102,
+    "kernels": [
+     "void vllm::rms_norm_per_block_quant_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, true, ",
+     "void deep_gemm::fp8_gemm_kernel<6144u, 4096u, 128u, 96u, 128u, 1u, 6u, 128u, 128u, 1u, dee"
+    ],
+    "us": 20.95897674560547
+   }
+  },
+  {
+   "shape": "o_proj",
+   "K": 4096,
+   "N": 4096,
+   "M": 1,
+   "norm_in_path": false,
+   "e8m0": true,
+   "today": {
+    "max_abs": 0.09070777893066406,
+    "rel_fro": 0.026428773999214172,
+    "ref_max": 3.6906497478485107,
+    "kernels": [
+     "void tensorrt_llm::kernels::fp8_blockscale_gemm::scale_1x128_kernel<__nv_bfloat16, __nv_fp",
+     "void deep_gemm::fp8_gemm_kernel_swapAB<4096u, 4096u, 128u, 16u, 128u, 1u, 8u, 128u, 128u, "
+    ],
+    "us": 10.231743812561035
+   },
+   "prop_dg": {
+    "max_abs": 0.09070777893066406,
+    "rel_fro": 0.02644086442887783,
+    "ref_max": 3.6906497478485107,
+    "kernels": [
+     "void per_token_group_quant_8bit_register_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, f",
+     "void deep_gemm::sm90_fp8_gemm_1d2d_impl<(cute::UMMA::Major)0, 0u, 4096u, 4096u, 1u, 16u, 3"
+    ],
+    "us": 10.863615989685059
+   },
+   "prop_fi": {
+    "max_abs": 0.09070777893066406,
+    "rel_fro": 0.02644086442887783,
+    "ref_max": 3.6906497478485107,
+    "kernels": [
+     "void per_token_group_quant_8bit_register_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, f",
+     "void deep_gemm::fp8_gemm_kernel_swapAB<4096u, 4096u, 128u, 16u, 128u, 1u, 8u, 128u, 128u, "
+    ],
+    "us": 10.98192024230957
+   }
+  },
+  {
+   "shape": "o_proj",
+   "K": 4096,
+   "N": 4096,
+   "M": 8,
+   "norm_in_path": false,
+   "e8m0": true,
+   "today": {
+    "max_abs": 0.11221110820770264,
+    "rel_fro": 0.025507617741823196,
+    "ref_max": 4.251429080963135,
+    "kernels": [
+     "void tensorrt_llm::kernels::fp8_blockscale_gemm::scale_1x128_kernel<__nv_bfloat16, __nv_fp",
+     "void deep_gemm::fp8_gemm_kernel_swapAB<4096u, 4096u, 128u, 16u, 128u, 1u, 8u, 128u, 128u, "
+    ],
+    "us": 9.88259220123291
+   },
+   "prop_dg": {
+    "max_abs": 0.11221110820770264,
+    "rel_fro": 0.02551250346004963,
+    "ref_max": 4.251429080963135,
+    "kernels": [
+     "void per_token_group_quant_8bit_register_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, f",
+     "void deep_gemm::sm90_fp8_gemm_1d2d_impl<(cute::UMMA::Major)0, 0u, 4096u, 4096u, 1u, 16u, 3"
+    ],
+    "us": 8.622591972351074
+   },
+   "prop_fi": {
+    "max_abs": 0.11221110820770264,
+    "rel_fro": 0.02551250346004963,
+    "ref_max": 4.251429080963135,
+    "kernels": [
+     "void per_token_group_quant_8bit_register_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, f",
+     "void deep_gemm::fp8_gemm_kernel_swapAB<4096u, 4096u, 128u, 16u, 128u, 1u, 8u, 128u, 128u, "
+    ],
+    "us": 10.627615928649902
+   }
+  },
+  {
+   "shape": "o_proj",
+   "K": 4096,
+   "N": 4096,
+   "M": 16,
+   "norm_in_path": false,
+   "e8m0": true,
+   "today": {
+    "max_abs": 0.11156022548675537,
+    "rel_fro": 0.025816619396209717,
+    "ref_max": 4.247591018676758,
+    "kernels": [
+     "void tensorrt_llm::kernels::fp8_blockscale_gemm::scale_1x128_kernel<__nv_bfloat16, __nv_fp",
+     "void deep_gemm::fp8_gemm_kernel_swapAB<4096u, 4096u, 128u, 16u, 128u, 1u, 8u, 128u, 128u, "
+    ],
+    "us": 9.73356819152832
+   },
+   "prop_dg": {
+    "max_abs": 0.11156022548675537,
+    "rel_fro": 0.02581137605011463,
+    "ref_max": 4.247591018676758,
+    "kernels": [
+     "void per_token_group_quant_8bit_register_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, f",
+     "void deep_gemm::sm90_fp8_gemm_1d2d_impl<(cute::UMMA::Major)0, 0u, 4096u, 4096u, 1u, 16u, 3"
+    ],
+    "us": 8.666399955749512
+   },
+   "prop_fi": {
+    "max_abs": 0.11156022548675537,
+    "rel_fro": 0.02581137605011463,
+    "ref_max": 4.247591018676758,
+    "kernels": [
+     "void per_token_group_quant_8bit_register_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, f",
+     "void deep_gemm::fp8_gemm_kernel_swapAB<4096u, 4096u, 128u, 16u, 128u, 1u, 8u, 128u, 128u, "
+    ],
+    "us": 10.54032039642334
+   }
+  },
+  {
+   "shape": "o_proj",
+   "K": 4096,
+   "N": 4096,
+   "M": 32,
+   "norm_in_path": false,
+   "e8m0": true,
+   "today": {
+    "max_abs": 0.13251864910125732,
+    "rel_fro": 0.026637695729732513,
+    "ref_max": 4.48867654800415,
+    "kernels": [
+     "void per_token_group_quant_8bit_register_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, t",
+     "void deep_gemm::sm90_fp8_gemm_1d2d_impl<(cute::UMMA::Major)0, 0u, 4096u, 4096u, 1u, 32u, 3"
+    ],
+    "us": 9.035807609558105
+   },
+   "prop_dg": {
+    "max_abs": 0.12163901329040527,
+    "rel_fro": 0.02588607743382454,
+    "ref_max": 4.48867654800415,
+    "kernels": [
+     "void per_token_group_quant_8bit_register_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, f",
+     "void deep_gemm::sm90_fp8_gemm_1d2d_impl<(cute::UMMA::Major)0, 0u, 4096u, 4096u, 1u, 32u, 3"
+    ],
+    "us": 8.83743953704834
+   },
+   "prop_fi": {
+    "max_abs": 0.12163901329040527,
+    "rel_fro": 0.02588607743382454,
+    "ref_max": 4.48867654800415,
+    "kernels": [
+     "void per_token_group_quant_8bit_register_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, f",
+     "void deep_gemm::fp8_gemm_kernel<4096u, 4096u, 64u, 32u, 128u, 1u, 8u, 128u, 128u, 1u, deep"
+    ],
+    "us": 13.285152435302734
+   }
+  },
+  {
+   "shape": "o_proj",
+   "K": 4096,
+   "N": 4096,
+   "M": 64,
+   "norm_in_path": false,
+   "e8m0": true,
+   "today": {
+    "max_abs": 0.1296757459640503,
+    "rel_fro": 0.026685377582907677,
+    "ref_max": 4.4725871086120605,
+    "kernels": [
+     "void per_token_group_quant_8bit_register_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, t",
+     "void deep_gemm::sm90_fp8_gemm_1d2d_impl<(cute::UMMA::Major)0, 0u, 4096u, 4096u, 1u, 64u, 3"
+    ],
+    "us": 8.380703926086426
+   },
+   "prop_dg": {
+    "max_abs": 0.11942434310913086,
+    "rel_fro": 0.025736473500728607,
+    "ref_max": 4.4725871086120605,
+    "kernels": [
+     "void per_token_group_quant_8bit_register_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, f",
+     "void deep_gemm::sm90_fp8_gemm_1d2d_impl<(cute::UMMA::Major)0, 0u, 4096u, 4096u, 1u, 64u, 3"
+    ],
+    "us": 7.969183921813965
+   },
+   "prop_fi": {
+    "max_abs": 0.11942434310913086,
+    "rel_fro": 0.025736473500728607,
+    "ref_max": 4.4725871086120605,
+    "kernels": [
+     "void per_token_group_quant_8bit_register_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, f",
+     "void deep_gemm::fp8_gemm_kernel<4096u, 4096u, 64u, 32u, 128u, 1u, 8u, 128u, 128u, 1u, deep"
+    ],
+    "us": 9.000320434570312
+   }
+  },
+  {
+   "shape": "o_proj",
+   "K": 4096,
+   "N": 4096,
+   "M": 256,
+   "norm_in_path": false,
+   "e8m0": true,
+   "today": {
+    "max_abs": 0.1399751603603363,
+    "rel_fro": 0.02673480287194252,
+    "ref_max": 5.119536876678467,
+    "kernels": [
+     "void per_token_group_quant_8bit_register_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, t",
+     "void deep_gemm::sm90_fp8_gemm_1d2d_impl<(cute::UMMA::Major)0, 0u, 4096u, 4096u, 1u, 64u, 1"
+    ],
+    "us": 12.264800071716309
+   },
+   "prop_dg": {
+    "max_abs": 0.12494468688964844,
+    "rel_fro": 0.025744641199707985,
+    "ref_max": 5.119536876678467,
+    "kernels": [
+     "void per_token_group_quant_8bit_register_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, f",
+     "void deep_gemm::sm90_fp8_gemm_1d2d_impl<(cute::UMMA::Major)0, 0u, 4096u, 4096u, 1u, 64u, 1"
+    ],
+    "us": 12.076160430908203
+   },
+   "prop_fi": {
+    "max_abs": 0.12494468688964844,
+    "rel_fro": 0.025744641199707985,
+    "ref_max": 5.119536876678467,
+    "kernels": [
+     "void per_token_group_quant_8bit_register_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, f",
+     "void deep_gemm::fp8_gemm_kernel<4096u, 4096u, 128u, 64u, 128u, 1u, 8u, 128u, 128u, 1u, dee"
+    ],
+    "us": 14.292448043823242
+   }
+  },
+  {
+   "shape": "gate_up",
+   "K": 4096,
+   "N": 24576,
+   "M": 1,
+   "norm_in_path": true,
+   "e8m0": true,
+   "today": {
+    "max_abs": 0.11266320943832397,
+    "rel_fro": 0.02556268870830536,
+    "ref_max": 4.512796401977539,
+    "kernels": [
+     "std::enable_if<(((8)>(0)))&&vllm::_typeConvert<c10::BFloat16>::exists, void>::type vllm::f",
+     "void tensorrt_llm::kernels::fp8_blockscale_gemm::scale_1x128_kernel<__nv_bfloat16, __nv_fp",
+     "void deep_gemm::fp8_gemm_kernel_swapAB<24576u, 4096u, 128u, 16u, 128u, 1u, 8u, 128u, 128u,"
+    ],
+    "us": 39.992671966552734
+   },
+   "prop_dg": {
+    "max_abs": 0.10637086629867554,
+    "rel_fro": 0.02538354881107807,
+    "ref_max": 4.512796401977539,
+    "kernels": [
+     "void vllm::rms_norm_per_block_quant_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, true, ",
+     "void deep_gemm::sm90_fp8_gemm_1d2d_impl<(cute::UMMA::Major)0, 0u, 24576u, 4096u, 1u, 16u, "
+    ],
+    "us": 43.07148742675781
+   },
+   "prop_fi": {
+    "max_abs": 0.10637086629867554,
+    "rel_fro": 0.02538354881107807,
+    "ref_max": 4.512796401977539,
+    "kernels": [
+     "void vllm::rms_norm_per_block_quant_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, true, ",
+     "void deep_gemm::fp8_gemm_kernel_swapAB<24576u, 4096u, 128u, 16u, 128u, 1u, 8u, 128u, 128u,"
+    ],
+    "us": 41.336063385009766
+   }
+  },
+  {
+   "shape": "gate_up",
+   "K": 4096,
+   "N": 24576,
+   "M": 8,
+   "norm_in_path": true,
+   "e8m0": true,
+   "today": {
+    "max_abs": 0.1277846097946167,
+    "rel_fro": 0.025830630213022232,
+    "ref_max": 5.053671836853027,
+    "kernels": [
+     "std::enable_if<(((8)>(0)))&&vllm::_typeConvert<c10::BFloat16>::exists, void>::type vllm::f",
+     "void tensorrt_llm::kernels::fp8_blockscale_gemm::scale_1x128_kernel<__nv_bfloat16, __nv_fp",
+     "void deep_gemm::fp8_gemm_kernel_swapAB<24576u, 4096u, 128u, 16u, 128u, 1u, 8u, 128u, 128u,"
+    ],
+    "us": 40.96316909790039
+   },
+   "prop_dg": {
+    "max_abs": 0.11763498187065125,
+    "rel_fro": 0.025609787553548813,
+    "ref_max": 5.053671836853027,
+    "kernels": [
+     "void vllm::rms_norm_per_block_quant_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, true, ",
+     "void deep_gemm::sm90_fp8_gemm_1d2d_impl<(cute::UMMA::Major)0, 0u, 24576u, 4096u, 1u, 16u, "
+    ],
+    "us": 43.63721466064453
+   },
+   "prop_fi": {
+    "max_abs": 0.11763498187065125,
+    "rel_fro": 0.025609787553548813,
+    "ref_max": 5.053671836853027,
+    "kernels": [
+     "void vllm::rms_norm_per_block_quant_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, true, ",
+     "void deep_gemm::fp8_gemm_kernel_swapAB<24576u, 4096u, 128u, 16u, 128u, 1u, 8u, 128u, 128u,"
+    ],
+    "us": 42.09542465209961
+   }
+  },
+  {
+   "shape": "gate_up",
+   "K": 4096,
+   "N": 24576,
+   "M": 16,
+   "norm_in_path": true,
+   "e8m0": true,
+   "today": {
+    "max_abs": 0.11758774518966675,
+    "rel_fro": 0.025738844648003578,
+    "ref_max": 6.3327155113220215,
+    "kernels": [
+     "std::enable_if<(((8)>(0)))&&vllm::_typeConvert<c10::BFloat16>::exists, void>::type vllm::f",
+     "void tensorrt_llm::kernels::fp8_blockscale_gemm::scale_1x128_kernel<__nv_bfloat16, __nv_fp",
+     "void deep_gemm::fp8_gemm_kernel_swapAB<24576u, 4096u, 128u, 16u, 128u, 1u, 8u, 128u, 128u,"
+    ],
+    "us": 41.43904113769531
+   },
+   "prop_dg": {
+    "max_abs": 0.1279376745223999,
+    "rel_fro": 0.025493402034044266,
+    "ref_max": 6.3327155113220215,
+    "kernels": [
+     "void vllm::rms_norm_per_block_quant_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, true, ",
+     "void deep_gemm::sm90_fp8_gemm_1d2d_impl<(cute::UMMA::Major)0, 0u, 24576u, 4096u, 1u, 16u, "
+    ],
+    "us": 43.54764938354492
+   },
+   "prop_fi": {
+    "max_abs": 0.1279376745223999,
+    "rel_fro": 0.025493402034044266,
+    "ref_max": 6.3327155113220215,
+    "kernels": [
+     "void vllm::rms_norm_per_block_quant_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, true, ",
+     "void deep_gemm::fp8_gemm_kernel_swapAB<24576u, 4096u, 128u, 16u, 128u, 1u, 8u, 128u, 128u,"
+    ],
+    "us": 42.446624755859375
+   }
+  },
+  {
+   "shape": "gate_up",
+   "K": 4096,
+   "N": 24576,
+   "M": 32,
+   "norm_in_path": true,
+   "e8m0": true,
+   "today": {
+    "max_abs": 0.128509521484375,
+    "rel_fro": 0.02707095444202423,
+    "ref_max": 5.051194667816162,
+    "kernels": [
+     "std::enable_if<(((8)>(0)))&&vllm::_typeConvert<c10::BFloat16>::exists, void>::type vllm::f",
+     "void per_token_group_quant_8bit_register_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, t",
+     "void deep_gemm::sm90_fp8_gemm_1d2d_impl<(cute::UMMA::Major)0, 0u, 24576u, 4096u, 1u, 32u, "
+    ],
+    "us": 43.608577728271484
+   },
+   "prop_dg": {
+    "max_abs": 0.12931299209594727,
+    "rel_fro": 0.025466738268733025,
+    "ref_max": 5.051194667816162,
+    "kernels": [
+     "void vllm::rms_norm_per_block_quant_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, true, ",
+     "void deep_gemm::sm90_fp8_gemm_1d2d_impl<(cute::UMMA::Major)0, 0u, 24576u, 4096u, 1u, 32u, "
+    ],
+    "us": 44.0088005065918
+   },
+   "prop_fi": {
+    "max_abs": 0.12931299209594727,
+    "rel_fro": 0.025466738268733025,
+    "ref_max": 5.051194667816162,
+    "kernels": [
+     "void vllm::rms_norm_per_block_quant_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, true, ",
+     "void deep_gemm::fp8_gemm_kernel<24576u, 4096u, 64u, 96u, 128u, 1u, 6u, 128u, 128u, 1u, dee"
+    ],
+    "us": 43.41334533691406
+   }
+  },
+  {
+   "shape": "gate_up",
+   "K": 4096,
+   "N": 24576,
+   "M": 64,
+   "norm_in_path": true,
+   "e8m0": true,
+   "today": {
+    "max_abs": 0.14714395999908447,
+    "rel_fro": 0.026880118995904922,
+    "ref_max": 5.056526184082031,
+    "kernels": [
+     "std::enable_if<(((8)>(0)))&&vllm::_typeConvert<c10::BFloat16>::exists, void>::type vllm::f",
+     "void per_token_group_quant_8bit_register_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, t",
+     "void deep_gemm::sm90_fp8_gemm_1d2d_impl<(cute::UMMA::Major)0, 0u, 24576u, 4096u, 1u, 64u, "
+    ],
+    "us": 44.240928649902344
+   },
+   "prop_dg": {
+    "max_abs": 0.13396055996418,
+    "rel_fro": 0.025481270626187325,
+    "ref_max": 5.056526184082031,
+    "kernels": [
+     "void vllm::rms_norm_per_block_quant_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, true, ",
+     "void deep_gemm::sm90_fp8_gemm_1d2d_impl<(cute::UMMA::Major)0, 0u, 24576u, 4096u, 1u, 64u, "
+    ],
+    "us": 44.65987014770508
+   },
+   "prop_fi": {
+    "max_abs": 0.13396055996418,
+    "rel_fro": 0.025481270626187325,
+    "ref_max": 5.056526184082031,
+    "kernels": [
+     "void vllm::rms_norm_per_block_quant_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, true, ",
+     "void deep_gemm::fp8_gemm_kernel<24576u, 4096u, 64u, 96u, 128u, 1u, 6u, 128u, 128u, 1u, dee"
+    ],
+    "us": 44.349246978759766
+   }
+  },
+  {
+   "shape": "gate_up",
+   "K": 4096,
+   "N": 24576,
+   "M": 256,
+   "norm_in_path": true,
+   "e8m0": true,
+   "today": {
+    "max_abs": 0.1516820788383484,
+    "rel_fro": 0.02691667526960373,
+    "ref_max": 6.212529182434082,
+    "kernels": [
+     "std::enable_if<(((8)>(0)))&&vllm::_typeConvert<c10::BFloat16>::exists, void>::type vllm::f",
+     "void per_token_group_quant_8bit_register_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, t",
+     "void deep_gemm::sm90_fp8_gemm_1d2d_impl<(cute::UMMA::Major)0, 0u, 24576u, 4096u, 1u, 128u,"
+    ],
+    "us": 57.54972839355469
+   },
+   "prop_dg": {
+    "max_abs": 0.136959046125412,
+    "rel_fro": 0.02548649162054062,
+    "ref_max": 6.212529182434082,
+    "kernels": [
+     "void vllm::rms_norm_per_block_quant_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, true, ",
+     "void deep_gemm::sm90_fp8_gemm_1d2d_impl<(cute::UMMA::Major)0, 0u, 24576u, 4096u, 1u, 128u,"
+    ],
+    "us": 60.03123092651367
+   },
+   "prop_fi": {
+    "max_abs": 0.136959046125412,
+    "rel_fro": 0.02548649162054062,
+    "ref_max": 6.212529182434082,
+    "kernels": [
+     "void vllm::rms_norm_per_block_quant_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, true, ",
+     "void deep_gemm::fp8_gemm_kernel<24576u, 4096u, 128u, 128u, 128u, 1u, 5u, 128u, 128u, 1u, d"
+    ],
+    "us": 67.25564575195312
+   }
+  },
+  {
+   "shape": "down",
+   "K": 12288,
+   "N": 4096,
+   "M": 1,
+   "norm_in_path": false,
+   "e8m0": true,
+   "today": {
+    "max_abs": 0.08994323015213013,
+    "rel_fro": 0.02614700421690941,
+    "ref_max": 3.542354106903076,
+    "kernels": [
+     "void tensorrt_llm::kernels::fp8_blockscale_gemm::scale_1x128_kernel<__nv_bfloat16, __nv_fp",
+     "void deep_gemm::fp8_gemm_kernel_swapAB<4096u, 12288u, 128u, 16u, 128u, 1u, 8u, 128u, 128u,"
+    ],
+    "us": 23.968000411987305
+   },
+   "prop_dg": {
+    "max_abs": 0.09167695045471191,
+    "rel_fro": 0.02612922340631485,
+    "ref_max": 3.542354106903076,
+    "kernels": [
+     "void per_token_group_quant_8bit_register_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, f",
+     "void deep_gemm::sm90_fp8_gemm_1d2d_impl<(cute::UMMA::Major)0, 0u, 4096u, 12288u, 1u, 16u, "
+    ],
+    "us": 27.495359420776367
+   },
+   "prop_fi": {
+    "max_abs": 0.09167695045471191,
+    "rel_fro": 0.02612922340631485,
+    "ref_max": 3.542354106903076,
+    "kernels": [
+     "void per_token_group_quant_8bit_register_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, f",
+     "void deep_gemm::fp8_gemm_kernel_swapAB<4096u, 12288u, 128u, 16u, 128u, 1u, 8u, 128u, 128u,"
+    ],
+    "us": 24.71251106262207
+   }
+  },
+  {
+   "shape": "down",
+   "K": 12288,
+   "N": 4096,
+   "M": 8,
+   "norm_in_path": false,
+   "e8m0": true,
+   "today": {
+    "max_abs": 0.11295044422149658,
+    "rel_fro": 0.025565657764673233,
+    "ref_max": 4.272650241851807,
+    "kernels": [
+     "void tensorrt_llm::kernels::fp8_blockscale_gemm::scale_1x128_kernel<__nv_bfloat16, __nv_fp",
+     "void deep_gemm::fp8_gemm_kernel_swapAB<4096u, 12288u, 128u, 16u, 128u, 1u, 8u, 128u, 128u,"
+    ],
+    "us": 23.788896560668945
+   },
+   "prop_dg": {
+    "max_abs": 0.11295044422149658,
+    "rel_fro": 0.02558331936597824,
+    "ref_max": 4.272650241851807,
+    "kernels": [
+     "void per_token_group_quant_8bit_register_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, f",
+     "void deep_gemm::sm90_fp8_gemm_1d2d_impl<(cute::UMMA::Major)0, 0u, 4096u, 12288u, 1u, 16u, "
+    ],
+    "us": 23.194528579711914
+   },
+   "prop_fi": {
+    "max_abs": 0.11295044422149658,
+    "rel_fro": 0.02558331936597824,
+    "ref_max": 4.272650241851807,
+    "kernels": [
+     "void per_token_group_quant_8bit_register_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, f",
+     "void deep_gemm::fp8_gemm_kernel_swapAB<4096u, 12288u, 128u, 16u, 128u, 1u, 8u, 128u, 128u,"
+    ],
+    "us": 24.806528091430664
+   }
+  },
+  {
+   "shape": "down",
+   "K": 12288,
+   "N": 4096,
+   "M": 16,
+   "norm_in_path": false,
+   "e8m0": true,
+   "today": {
+    "max_abs": 0.1069592833518982,
+    "rel_fro": 0.02557471953332424,
+    "ref_max": 4.279898166656494,
+    "kernels": [
+     "void tensorrt_llm::kernels::fp8_blockscale_gemm::scale_1x128_kernel<__nv_bfloat16, __nv_fp",
+     "void deep_gemm::fp8_gemm_kernel_swapAB<4096u, 12288u, 128u, 16u, 128u, 1u, 8u, 128u, 128u,"
+    ],
+    "us": 24.088735580444336
+   },
+   "prop_dg": {
+    "max_abs": 0.1047523021697998,
+    "rel_fro": 0.025588933378458023,
+    "ref_max": 4.279898166656494,
+    "kernels": [
+     "void per_token_group_quant_8bit_register_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, f",
+     "void deep_gemm::sm90_fp8_gemm_1d2d_impl<(cute::UMMA::Major)0, 0u, 4096u, 12288u, 1u, 16u, "
+    ],
+    "us": 23.374879837036133
+   },
+   "prop_fi": {
+    "max_abs": 0.1047523021697998,
+    "rel_fro": 0.025588933378458023,
+    "ref_max": 4.279898166656494,
+    "kernels": [
+     "void per_token_group_quant_8bit_register_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, f",
+     "void deep_gemm::fp8_gemm_kernel_swapAB<4096u, 12288u, 128u, 16u, 128u, 1u, 8u, 128u, 128u,"
+    ],
+    "us": 25.136512756347656
+   }
+  },
+  {
+   "shape": "down",
+   "K": 12288,
+   "N": 4096,
+   "M": 32,
+   "norm_in_path": false,
+   "e8m0": true,
+   "today": {
+    "max_abs": 0.128403902053833,
+    "rel_fro": 0.026789551600813866,
+    "ref_max": 4.506147384643555,
+    "kernels": [
+     "void per_token_group_quant_8bit_register_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, t",
+     "void deep_gemm::sm90_fp8_gemm_1d2d_impl<(cute::UMMA::Major)0, 0u, 4096u, 12288u, 1u, 32u, "
+    ],
+    "us": 23.211711883544922
+   },
+   "prop_dg": {
+    "max_abs": 0.10805946588516235,
+    "rel_fro": 0.025822965428233147,
+    "ref_max": 4.506147384643555,
+    "kernels": [
+     "void per_token_group_quant_8bit_register_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, f",
+     "void deep_gemm::sm90_fp8_gemm_1d2d_impl<(cute::UMMA::Major)0, 0u, 4096u, 12288u, 1u, 32u, "
+    ],
+    "us": 23.15497589111328
+   },
+   "prop_fi": {
+    "max_abs": 0.10805946588516235,
+    "rel_fro": 0.025822965428233147,
+    "ref_max": 4.506147384643555,
+    "kernels": [
+     "void per_token_group_quant_8bit_register_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, f",
+     "void deep_gemm::fp8_gemm_kernel<4096u, 12288u, 64u, 32u, 128u, 1u, 8u, 128u, 128u, 1u, dee"
+    ],
+    "us": 32.152862548828125
+   }
+  },
+  {
+   "shape": "down",
+   "K": 12288,
+   "N": 4096,
+   "M": 64,
+   "norm_in_path": false,
+   "e8m0": true,
+   "today": {
+    "max_abs": 0.12645506858825684,
+    "rel_fro": 0.026682378724217415,
+    "ref_max": 5.134389400482178,
+    "kernels": [
+     "void per_token_group_quant_8bit_register_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, t",
+     "void deep_gemm::sm90_fp8_gemm_1d2d_impl<(cute::UMMA::Major)0, 0u, 4096u, 12288u, 1u, 64u, "
+    ],
+    "us": 23.852447509765625
+   },
+   "prop_dg": {
+    "max_abs": 0.11094832420349121,
+    "rel_fro": 0.025848636403679848,
+    "ref_max": 5.134389400482178,
+    "kernels": [
+     "void per_token_group_quant_8bit_register_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, f",
+     "void deep_gemm::sm90_fp8_gemm_1d2d_impl<(cute::UMMA::Major)0, 0u, 4096u, 12288u, 1u, 64u, "
+    ],
+    "us": 24.40630340576172
+   },
+   "prop_fi": {
+    "max_abs": 0.11094832420349121,
+    "rel_fro": 0.025848636403679848,
+    "ref_max": 5.134389400482178,
+    "kernels": [
+     "void per_token_group_quant_8bit_register_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, f",
+     "void deep_gemm::fp8_gemm_kernel<4096u, 12288u, 64u, 32u, 128u, 1u, 8u, 128u, 128u, 1u, dee"
+    ],
+    "us": 25.613567352294922
+   }
+  },
+  {
+   "shape": "down",
+   "K": 12288,
+   "N": 4096,
+   "M": 256,
+   "norm_in_path": false,
+   "e8m0": true,
+   "today": {
+    "max_abs": 0.14451897144317627,
+    "rel_fro": 0.02666485868394375,
+    "ref_max": 4.795445919036865,
+    "kernels": [
+     "void per_token_group_quant_8bit_register_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, t",
+     "void deep_gemm::sm90_fp8_gemm_1d2d_impl<(cute::UMMA::Major)0, 0u, 4096u, 12288u, 1u, 64u, "
+    ],
+    "us": 35.706687927246094
+   },
+   "prop_dg": {
+    "max_abs": 0.12033092975616455,
+    "rel_fro": 0.02577570453286171,
+    "ref_max": 4.795445919036865,
+    "kernels": [
+     "void per_token_group_quant_8bit_register_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, f",
+     "void deep_gemm::sm90_fp8_gemm_1d2d_impl<(cute::UMMA::Major)0, 0u, 4096u, 12288u, 1u, 64u, "
+    ],
+    "us": 35.225982666015625
+   },
+   "prop_fi": {
+    "max_abs": 0.12033092975616455,
+    "rel_fro": 0.02577570453286171,
+    "ref_max": 4.795445919036865,
+    "kernels": [
+     "void per_token_group_quant_8bit_register_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, f",
+     "void deep_gemm::fp8_gemm_kernel<4096u, 12288u, 128u, 64u, 128u, 1u, 8u, 128u, 128u, 1u, de"
+    ],
+    "us": 39.45510482788086
+   }
+  }
+ ],
+ "gpu": "NVIDIA H100 80GB HBM3"
+}

@@ -1,0 +1,5 @@
+A bs=256 Avg latency: 0.6049603069550358 seconds
+C bs=256 Avg latency: 0.7135571083577815 seconds
+A bs=128 Avg latency: 0.3469908637169283 seconds
+C bs=128 Avg latency: 0.390435291005997 seconds
+ALL_DONE

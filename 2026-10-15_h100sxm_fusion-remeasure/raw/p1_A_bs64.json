@@ -1,0 +1,385 @@
+{
+ "trace": "traces/p1/A_bs64/rank0.1792067975827284162.pt.trace.json.gz",
+ "n_steps": 3,
+ "unassigned_kernels": 30,
+ "steps": [
+  {
+   "total_us": 4967.711,
+   "rollup": {
+    "other": 1575.690000000001,
+    "quant_norm": 556.1650000000005,
+    "gemm": 2835.856000000002
+   },
+   "category": {
+    "misc": 25.056,
+    "attn": 1298.5700000000004,
+    "rmsnorm": 161.37900000000002,
+    "quant": 394.7860000000002,
+    "gemm_fp8": 2835.856000000002,
+    "qknorm_rope": 171.041,
+    "act": 81.023
+   },
+   "kernels": {
+    "void at::native::vectorized_elementwise_kernel<8, at::native::FillFunctor<bool>, std::array<char*, 1ul>, false": [
+     1,
+     1.056
+    ],
+    "void ": [
+     1,
+     0.96
+    ],
+    "void at::native::vectorized_elementwise_kernel<4, at::native::FillFunctor<int>, std::array<char*, 1ul>, false>": [
+     1,
+     1.024
+    ],
+    "_prepare_pos_seq_lens_kernel": [
+     1,
+     1.664
+    ],
+    "_combine_sampled_and_draft_tokens_kernel": [
+     1,
+     7.425
+    ],
+    "_gather_block_tables_kernel": [
+     1,
+     7.52
+    ],
+    "_compute_slot_mappings_kernel": [
+     1,
+     3.104
+    ],
+    "void flash::prepare_varlen_num_blocks_kernel<4, false>": [
+     1,
+     1.983
+    ],
+    "void at::native::unrolled_elementwise_kernel<at::native::FillFunctor<int>, std::array<char*, 1ul>, 4, TrivialO": [
+     1,
+     0.992
+    ],
+    "triton_red_fused__to_copy_embedding_rms_norm_0": [
+     1,
+     2.849
+    ],
+    "void per_token_group_quant_8bit_register_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, true, 128>": [
+     144,
+     394.7860000000002
+    ],
+    "void deep_gemm::sm90_fp8_gemm_1d2d_impl< @qkv": [
+     36,
+     403.167
+    ],
+    "triton_per_fused_add_cat_index_select_mul_rms_norm_split_split_with_sizes_sub_unsqueeze_view_1": [
+     1,
+     2.688
+    ],
+    "triton_per_fused_add_cat_index_select_mul_rms_norm_split_split_with_sizes_sub_unsqueeze_view_2": [
+     1,
+     2.496
+    ],
+    "void vllm::reshape_and_cache_flash_kernel<__nv_bfloat16, __nv_bfloat16, ": [
+     36,
+     81.345
+    ],
+    "void cutlass::device_kernel<flash::enable_sm90_or_later<flash::FlashAttnFwdSm90<flash::CollectiveMainloopFwdSm": [
+     36,
+     1118.9189999999999
+    ],
+    "void cutlass::device_kernel<flash::FlashAttnFwdCombine<cute::tuple<cute::C<8>, cute::C<128> >, 5, 256, 1, fals": [
+     36,
+     96.32300000000001
+    ],
+    "void deep_gemm::sm90_fp8_gemm_1d2d_impl< @o": [
+     36,
+     319.3590000000001
+    ],
+    "triton_red_fused_fused_add_rms_norm_0": [
+     36,
+     76.22400000000003
+    ],
+    "void deep_gemm::sm90_fp8_gemm_1d2d_impl< @gate_up": [
+     36,
+     1321.099
+    ],
+    "triton_poi_fused_mul_silu_slice_1": [
+     36,
+     81.023
+    ],
+    "void deep_gemm::sm90_fp8_gemm_1d2d_impl< @down": [
+     36,
+     792.231
+    ],
+    "triton_red_fused_fused_add_rms_norm_2": [
+     36,
+     82.30600000000001
+    ],
+    "triton_per_fused_add_cat_index_select_mul_rms_norm_split_split_with_sizes_sub_unsqueeze_view_3": [
+     35,
+     85.729
+    ],
+    "triton_per_fused_add_cat_index_select_mul_rms_norm_split_split_with_sizes_sub_unsqueeze_view_4": [
+     35,
+     80.12800000000001
+    ],
+    "memcpy32_post": [
+     1,
+     1.311
+    ]
+   },
+   "n_kernels": 587,
+   "n_gemm_fp8": 144,
+   "wall_us": 8327.7890625
+  },
+  {
+   "total_us": 4960.8279999999995,
+   "rollup": {
+    "other": 1575.7200000000012,
+    "quant_norm": 558.5030000000003,
+    "gemm": 2826.6049999999996
+   },
+   "category": {
+    "misc": 25.633,
+    "attn": 1297.0960000000002,
+    "rmsnorm": 160.67300000000006,
+    "quant": 397.8300000000003,
+    "gemm_fp8": 2826.6049999999996,
+    "qknorm_rope": 170.78600000000006,
+    "act": 82.205
+   },
+   "kernels": {
+    "void at::native::vectorized_elementwise_kernel<8, at::native::FillFunctor<bool>, std::array<char*, 1ul>, false": [
+     1,
+     1.088
+    ],
+    "void ": [
+     1,
+     0.928
+    ],
+    "void at::native::vectorized_elementwise_kernel<4, at::native::FillFunctor<int>, std::array<char*, 1ul>, false>": [
+     1,
+     0.993
+    ],
+    "_prepare_pos_seq_lens_kernel": [
+     1,
+     1.568
+    ],
+    "_combine_sampled_and_draft_tokens_kernel": [
+     1,
+     7.68
+    ],
+    "_gather_block_tables_kernel": [
+     1,
+     7.936
+    ],
+    "_compute_slot_mappings_kernel": [
+     1,
+     3.2
+    ],
+    "void flash::prepare_varlen_num_blocks_kernel<4, false>": [
+     1,
+     1.952
+    ],
+    "void at::native::unrolled_elementwise_kernel<at::native::FillFunctor<int>, std::array<char*, 1ul>, 4, TrivialO": [
+     1,
+     0.96
+    ],
+    "triton_red_fused__to_copy_embedding_rms_norm_0": [
+     1,
+     2.913
+    ],
+    "void per_token_group_quant_8bit_register_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, true, 128>": [
+     144,
+     397.8300000000003
+    ],
+    "void deep_gemm::sm90_fp8_gemm_1d2d_impl< @qkv": [
+     36,
+     402.45799999999997
+    ],
+    "triton_per_fused_add_cat_index_select_mul_rms_norm_split_split_with_sizes_sub_unsqueeze_view_1": [
+     1,
+     2.689
+    ],
+    "triton_per_fused_add_cat_index_select_mul_rms_norm_split_split_with_sizes_sub_unsqueeze_view_2": [
+     1,
+     2.496
+    ],
+    "void vllm::reshape_and_cache_flash_kernel<__nv_bfloat16, __nv_bfloat16, ": [
+     36,
+     81.63100000000001
+    ],
+    "void cutlass::device_kernel<flash::enable_sm90_or_later<flash::FlashAttnFwdSm90<flash::CollectiveMainloopFwdSm": [
+     36,
+     1118.1180000000002
+    ],
+    "void cutlass::device_kernel<flash::FlashAttnFwdCombine<cute::tuple<cute::C<8>, cute::C<128> >, 5, 256, 1, fals": [
+     36,
+     95.395
+    ],
+    "void deep_gemm::sm90_fp8_gemm_1d2d_impl< @o": [
+     36,
+     313.858
+    ],
+    "triton_red_fused_fused_add_rms_norm_0": [
+     36,
+     76.191
+    ],
+    "void deep_gemm::sm90_fp8_gemm_1d2d_impl< @gate_up": [
+     36,
+     1320.5240000000006
+    ],
+    "triton_poi_fused_mul_silu_slice_1": [
+     36,
+     82.205
+    ],
+    "void deep_gemm::sm90_fp8_gemm_1d2d_impl< @down": [
+     36,
+     789.765
+    ],
+    "triton_red_fused_fused_add_rms_norm_2": [
+     36,
+     81.569
+    ],
+    "triton_per_fused_add_cat_index_select_mul_rms_norm_split_split_with_sizes_sub_unsqueeze_view_3": [
+     35,
+     85.50299999999999
+    ],
+    "triton_per_fused_add_cat_index_select_mul_rms_norm_split_split_with_sizes_sub_unsqueeze_view_4": [
+     35,
+     80.098
+    ],
+    "memcpy32_post": [
+     1,
+     1.28
+    ]
+   },
+   "n_kernels": 587,
+   "n_gemm_fp8": 144,
+   "wall_us": 6364.385986328125
+  },
+  {
+   "total_us": 4955.935,
+   "rollup": {
+    "other": 1572.1360000000018,
+    "quant_norm": 559.1430000000008,
+    "gemm": 2824.655999999998
+   },
+   "category": {
+    "misc": 24.831,
+    "attn": 1294.3070000000002,
+    "rmsnorm": 162.43799999999996,
+    "quant": 396.7050000000002,
+    "gemm_fp8": 2824.655999999998,
+    "qknorm_rope": 171.26300000000006,
+    "act": 81.735
+   },
+   "kernels": {
+    "void at::native::vectorized_elementwise_kernel<8, at::native::FillFunctor<bool>, std::array<char*, 1ul>, false": [
+     1,
+     1.056
+    ],
+    "void ": [
+     1,
+     0.96
+    ],
+    "void at::native::vectorized_elementwise_kernel<4, at::native::FillFunctor<int>, std::array<char*, 1ul>, false>": [
+     1,
+     0.96
+    ],
+    "_prepare_pos_seq_lens_kernel": [
+     1,
+     1.504
+    ],
+    "_combine_sampled_and_draft_tokens_kernel": [
+     1,
+     7.519
+    ],
+    "_gather_block_tables_kernel": [
+     1,
+     7.392
+    ],
+    "_compute_slot_mappings_kernel": [
+     1,
+     3.168
+    ],
+    "void flash::prepare_varlen_num_blocks_kernel<4, false>": [
+     1,
+     2.112
+    ],
+    "void at::native::unrolled_elementwise_kernel<at::native::FillFunctor<int>, std::array<char*, 1ul>, 4, TrivialO": [
+     1,
+     0.991
+    ],
+    "triton_red_fused__to_copy_embedding_rms_norm_0": [
+     1,
+     2.912
+    ],
+    "void per_token_group_quant_8bit_register_kernel<c10::BFloat16, c10::Float8_e4m3fn, true, true, 128>": [
+     144,
+     396.7050000000002
+    ],
+    "void deep_gemm::sm90_fp8_gemm_1d2d_impl< @qkv": [
+     36,
+     399.777
+    ],
+    "triton_per_fused_add_cat_index_select_mul_rms_norm_split_split_with_sizes_sub_unsqueeze_view_1": [
+     1,
+     2.592
+    ],
+    "triton_per_fused_add_cat_index_select_mul_rms_norm_split_split_with_sizes_sub_unsqueeze_view_2": [
+     1,
+     2.496
+    ],
+    "void vllm::reshape_and_cache_flash_kernel<__nv_bfloat16, __nv_bfloat16, ": [
+     36,
+     80.67500000000001
+    ],
+    "void cutlass::device_kernel<flash::enable_sm90_or_later<flash::FlashAttnFwdSm90<flash::CollectiveMainloopFwdSm": [
+     36,
+     1114.2749999999999
+    ],
+    "void cutlass::device_kernel<flash::FlashAttnFwdCombine<cute::tuple<cute::C<8>, cute::C<128> >, 5, 256, 1, fals": [
+     36,
+     97.245
+    ],
+    "void deep_gemm::sm90_fp8_gemm_1d2d_impl< @o": [
+     36,
+     316.514
+    ],
+    "triton_red_fused_fused_add_rms_norm_0": [
+     36,
+     76.708
+    ],
+    "void deep_gemm::sm90_fp8_gemm_1d2d_impl< @gate_up": [
+     36,
+     1319.3989999999997
+    ],
+    "triton_poi_fused_mul_silu_slice_1": [
+     36,
+     81.735
+    ],
+    "void deep_gemm::sm90_fp8_gemm_1d2d_impl< @down": [
+     36,
+     788.9660000000001
+    ],
+    "triton_red_fused_fused_add_rms_norm_2": [
+     36,
+     82.81800000000003
+    ],
+    "triton_per_fused_add_cat_index_select_mul_rms_norm_split_split_with_sizes_sub_unsqueeze_view_3": [
+     35,
+     86.174
+    ],
+    "triton_per_fused_add_cat_index_select_mul_rms_norm_split_split_with_sizes_sub_unsqueeze_view_4": [
+     35,
+     80.00099999999999
+    ],
+    "memcpy32_post": [
+     1,
+     1.281
+    ]
+   },
+   "n_kernels": 587,
+   "n_gemm_fp8": 144,
+   "wall_us": 6000.865966796875
+  }
+ ]
+}

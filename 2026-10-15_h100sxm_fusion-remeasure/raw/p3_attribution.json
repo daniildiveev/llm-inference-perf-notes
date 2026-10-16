@@ -1,0 +1,374 @@
+{
+ "A_bs1": {
+  "total": 3838.9776666666667,
+  "rollup": {
+   "other": 743.7056666666671,
+   "quant_norm": 375.13833333333343,
+   "gemm": 2720.1336666666666
+  },
+  "category": {
+   "misc": 15.776000000000002,
+   "attn": 519.0736666666668,
+   "rmsnorm": 139.89566666666664,
+   "quant": 235.2426666666666,
+   "gemm_fp8": 2720.1336666666666,
+   "qknorm_rope": 154.92566666666661,
+   "act": 53.93033333333334
+  },
+  "gemm": {
+   "qkv": {
+    "kernel": "deep_gemm::fp8_gemm_kernel_swapAB<N=6144,K=4096>",
+    "us_per_launch": 10.814592592592593,
+    "us_per_step": 389.32533333333333
+   },
+   "o": {
+    "kernel": "deep_gemm::fp8_gemm_kernel_swapAB<N=4096,K=4096>",
+    "us_per_launch": 8.801824074074077,
+    "us_per_step": 316.86566666666675
+   },
+   "gate_up": {
+    "kernel": "deep_gemm::fp8_gemm_kernel_swapAB<N=24576,K=4096>",
+    "us_per_launch": 34.687027777777786,
+    "us_per_step": 1248.7330000000002
+   },
+   "down": {
+    "kernel": "deep_gemm::fp8_gemm_kernel_swapAB<N=4096,K=12288>",
+    "us_per_launch": 21.255824074074077,
+    "us_per_step": 765.2096666666667
+   }
+  },
+  "n_steps": 3
+ },
+ "B_bs1": {
+  "total": 4396.869000000001,
+  "rollup": {
+   "other": 754.5206666666668,
+   "quant_norm": 637.4183333333332,
+   "gemm": 3004.9299999999994
+  },
+  "category": {
+   "misc": 17.258333333333333,
+   "attn": 529.1766666666667,
+   "norm_fused_quant": 418.03999999999996,
+   "gemm_fp8": 3004.9299999999994,
+   "qknorm_rope": 157.70566666666667,
+   "quant": 172.3923333333334,
+   "residual_copy": 44.938333333333325,
+   "act": 50.38000000000001,
+   "rmsnorm": 2.0476666666666667
+  },
+  "gemm": {
+   "qkv": {
+    "kernel": "void deep_gemm::sm90_fp8_gemm_1d2d_impl<",
+    "us_per_launch": 12.16711111111111,
+    "us_per_step": 438.01599999999996
+   },
+   "o": {
+    "kernel": "void deep_gemm::sm90_fp8_gemm_1d2d_impl<",
+    "us_per_launch": 10.149074074074072,
+    "us_per_step": 365.3666666666666
+   },
+   "gate_up": {
+    "kernel": "void deep_gemm::sm90_fp8_gemm_1d2d_impl<",
+    "us_per_launch": 36.72760185185186,
+    "us_per_step": 1322.1936666666668
+   },
+   "down": {
+    "kernel": "void deep_gemm::sm90_fp8_gemm_1d2d_impl<",
+    "us_per_launch": 24.426490740740743,
+    "us_per_step": 879.3536666666668
+   }
+  },
+  "n_steps": 3
+ },
+ "C_bs1": {
+  "total": 4306.791666666666,
+  "rollup": {
+   "other": 721.4236666666671,
+   "quant_norm": 599.822,
+   "gemm": 2985.5460000000003
+  },
+  "category": {
+   "misc": 17.759999999999998,
+   "attn": 502.71400000000006,
+   "norm_fused_quant": 402.82866666666666,
+   "gemm_fp8": 2985.5460000000003,
+   "qknorm_rope": 154.19733333333335,
+   "quant": 150.53733333333332,
+   "residual_copy": 44.02366666666666,
+   "act": 46.75233333333334,
+   "rmsnorm": 2.4323333333333332
+  },
+  "gemm": {
+   "qkv": {
+    "kernel": "void cutlass::device_kernel<vllm::cutlass_3x_gemm_fp8_blockwise<cutlas",
+    "us_per_launch": 13.295537037037034,
+    "us_per_step": 478.63933333333324
+   },
+   "o": {
+    "kernel": "void cutlass::device_kernel<vllm::cutlass_3x_gemm_fp8_blockwise<cutlas",
+    "us_per_launch": 9.998277777777778,
+    "us_per_step": 359.938
+   },
+   "gate_up": {
+    "kernel": "void cutlass::device_kernel<vllm::cutlass_3x_gemm_fp8_blockwise<cutlas",
+    "us_per_launch": 37.67477777777778,
+    "us_per_step": 1356.292
+   },
+   "down": {
+    "kernel": "void cutlass::device_kernel<vllm::cutlass_3x_gemm_fp8_blockwise<cutlas",
+    "us_per_launch": 21.963240740740744,
+    "us_per_step": 790.6766666666667
+   }
+  },
+  "n_steps": 3
+ },
+ "A_bs32": {
+  "total": 4504.415,
+  "rollup": {
+   "other": 1121.793333333334,
+   "quant_norm": 522.9596666666671,
+   "gemm": 2859.662000000002
+  },
+  "category": {
+   "misc": 16.939333333333334,
+   "attn": 868.4283333333335,
+   "rmsnorm": 152.11999999999995,
+   "quant": 370.83966666666674,
+   "gemm_fp8": 2859.662000000002,
+   "qknorm_rope": 170.63500000000002,
+   "act": 65.79066666666667
+  },
+  "gemm": {
+   "qkv": {
+    "kernel": "void deep_gemm::sm90_fp8_gemm_1d2d_impl<",
+    "us_per_launch": 11.86047222222222,
+    "us_per_step": 426.977
+   },
+   "o": {
+    "kernel": "void deep_gemm::sm90_fp8_gemm_1d2d_impl<",
+    "us_per_launch": 8.90225925925926,
+    "us_per_step": 320.4813333333334
+   },
+   "gate_up": {
+    "kernel": "void deep_gemm::sm90_fp8_gemm_1d2d_impl<",
+    "us_per_launch": 36.91573148148148,
+    "us_per_step": 1328.9663333333333
+   },
+   "down": {
+    "kernel": "void deep_gemm::sm90_fp8_gemm_1d2d_impl<",
+    "us_per_launch": 21.75659259259259,
+    "us_per_step": 783.2373333333333
+   }
+  },
+  "n_steps": 3
+ },
+ "B_bs32": {
+  "total": 4655.675,
+  "rollup": {
+   "other": 1123.1316666666671,
+   "quant_norm": 652.0103333333332,
+   "gemm": 2880.533
+  },
+  "category": {
+   "misc": 25.6,
+   "attn": 866.0203333333336,
+   "norm_fused_quant": 405.10766666666666,
+   "gemm_fp8": 2880.533,
+   "qknorm_rope": 166.5286666666667,
+   "quant": 188.83466666666672,
+   "residual_copy": 56.00933333333333,
+   "act": 64.98266666666667,
+   "rmsnorm": 2.0586666666666664
+  },
+  "gemm": {
+   "qkv": {
+    "kernel": "void deep_gemm::sm90_fp8_gemm_1d2d_impl<",
+    "us_per_launch": 11.609259259259257,
+    "us_per_step": 417.9333333333333
+   },
+   "o": {
+    "kernel": "void deep_gemm::sm90_fp8_gemm_1d2d_impl<",
+    "us_per_launch": 8.991972222222223,
+    "us_per_step": 323.71100000000007
+   },
+   "gate_up": {
+    "kernel": "void deep_gemm::sm90_fp8_gemm_1d2d_impl<",
+    "us_per_launch": 37.68878703703703,
+    "us_per_step": 1356.7963333333332
+   },
+   "down": {
+    "kernel": "void deep_gemm::sm90_fp8_gemm_1d2d_impl<",
+    "us_per_launch": 21.724787037037036,
+    "us_per_step": 782.0923333333333
+   }
+  },
+  "n_steps": 3
+ },
+ "C_bs32": {
+  "total": 5769.784,
+  "rollup": {
+   "other": 1099.928000000001,
+   "quant_norm": 614.7030000000001,
+   "gemm": 4055.1530000000002
+  },
+  "category": {
+   "misc": 19.362666666666666,
+   "attn": 853.6340000000002,
+   "norm_fused_quant": 387.5226666666666,
+   "gemm_fp8": 4055.1530000000002,
+   "qknorm_rope": 161.0126666666667,
+   "quant": 170.69966666666667,
+   "residual_copy": 54.101666666666674,
+   "act": 65.91866666666667,
+   "rmsnorm": 2.379
+  },
+  "gemm": {
+   "qkv": {
+    "kernel": "void cutlass::device_kernel<vllm::cutlass_3x_gemm_fp8_blockwise<cutlas",
+    "us_per_launch": 16.486555555555555,
+    "us_per_step": 593.516
+   },
+   "o": {
+    "kernel": "void cutlass::device_kernel<vllm::cutlass_3x_gemm_fp8_blockwise<cutlas",
+    "us_per_launch": 15.242759259259262,
+    "us_per_step": 548.7393333333334
+   },
+   "gate_up": {
+    "kernel": "void cutlass::device_kernel<vllm::cutlass_3x_gemm_fp8_blockwise<cutlas",
+    "us_per_launch": 44.065666666666665,
+    "us_per_step": 1586.364
+   },
+   "down": {
+    "kernel": "void cutlass::device_kernel<vllm::cutlass_3x_gemm_fp8_blockwise<cutlas",
+    "us_per_launch": 36.848157407407406,
+    "us_per_step": 1326.5336666666667
+   }
+  },
+  "n_steps": 3
+ },
+ "A_bs256": {
+  "total": 8539.907333333333,
+  "rollup": {
+   "other": 4103.812999999998,
+   "quant_norm": 849.6010000000003,
+   "gemm": 3586.493333333334
+  },
+  "category": {
+   "misc": 21.388,
+   "attn": 3673.8446666666646,
+   "rmsnorm": 251.18466666666666,
+   "quant": 598.4163333333335,
+   "gemm_fp8": 3586.493333333334,
+   "qknorm_rope": 208.24866666666668,
+   "act": 200.33166666666665
+  },
+  "gemm": {
+   "qkv": {
+    "kernel": "void deep_gemm::sm90_fp8_gemm_1d2d_impl<",
+    "us_per_launch": 13.629175925925928,
+    "us_per_step": 490.6503333333334
+   },
+   "o": {
+    "kernel": "void deep_gemm::sm90_fp8_gemm_1d2d_impl<",
+    "us_per_launch": 11.208324074074076,
+    "us_per_step": 403.4996666666667
+   },
+   "gate_up": {
+    "kernel": "void deep_gemm::sm90_fp8_gemm_1d2d_impl<",
+    "us_per_launch": 45.10425000000001,
+    "us_per_step": 1623.7530000000002
+   },
+   "down": {
+    "kernel": "void deep_gemm::sm90_fp8_gemm_1d2d_impl<",
+    "us_per_launch": 29.683064814814813,
+    "us_per_step": 1068.5903333333333
+   }
+  },
+  "n_steps": 3
+ },
+ "B_bs256": {
+  "total": 8707.357666666667,
+  "rollup": {
+   "other": 4137.060999999998,
+   "quant_norm": 983.2696666666668,
+   "gemm": 3587.027
+  },
+  "category": {
+   "misc": 22.985333333333337,
+   "attn": 3710.0626666666653,
+   "norm_fused_quant": 520.8046666666668,
+   "gemm_fp8": 3587.027,
+   "qknorm_rope": 207.553,
+   "quant": 379.29766666666677,
+   "residual_copy": 80.28766666666667,
+   "act": 196.45999999999998,
+   "rmsnorm": 2.8796666666666666
+  },
+  "gemm": {
+   "qkv": {
+    "kernel": "void deep_gemm::sm90_fp8_gemm_1d2d_impl<",
+    "us_per_launch": 13.257249999999999,
+    "us_per_step": 477.26099999999997
+   },
+   "o": {
+    "kernel": "void deep_gemm::sm90_fp8_gemm_1d2d_impl<",
+    "us_per_launch": 11.257870370370368,
+    "us_per_step": 405.28333333333325
+   },
+   "gate_up": {
+    "kernel": "void deep_gemm::sm90_fp8_gemm_1d2d_impl<",
+    "us_per_launch": 45.41385185185186,
+    "us_per_step": 1634.898666666667
+   },
+   "down": {
+    "kernel": "void deep_gemm::sm90_fp8_gemm_1d2d_impl<",
+    "us_per_launch": 29.71066666666666,
+    "us_per_step": 1069.5839999999998
+   }
+  },
+  "n_steps": 3
+ },
+ "C_bs256": {
+  "total": 9512.261666666667,
+  "rollup": {
+   "other": 4118.862333333332,
+   "quant_norm": 978.7350000000006,
+   "gemm": 4414.664333333334
+  },
+  "category": {
+   "misc": 23.05133333333334,
+   "attn": 3682.672333333332,
+   "norm_fused_quant": 522.8396666666667,
+   "gemm_fp8": 4414.664333333334,
+   "qknorm_rope": 205.726,
+   "quant": 369.93433333333326,
+   "residual_copy": 83.07033333333332,
+   "act": 207.41266666666667,
+   "rmsnorm": 2.8906666666666667
+  },
+  "gemm": {
+   "qkv": {
+    "kernel": "void cutlass::device_kernel<vllm::cutlass_3x_gemm_fp8_blockwise<cutlas",
+    "us_per_launch": 16.544666666666664,
+    "us_per_step": 595.608
+   },
+   "o": {
+    "kernel": "void cutlass::device_kernel<vllm::cutlass_3x_gemm_fp8_blockwise<cutlas",
+    "us_per_launch": 16.231268518518522,
+    "us_per_step": 584.3256666666668
+   },
+   "gate_up": {
+    "kernel": "void cutlass::device_kernel<vllm::cutlass_3x_gemm_fp8_blockwise<cutlas",
+    "us_per_launch": 49.040333333333336,
+    "us_per_step": 1765.452
+   },
+   "down": {
+    "kernel": "void cutlass::device_kernel<vllm::cutlass_3x_gemm_fp8_blockwise<cutlas",
+    "us_per_launch": 40.8132962962963,
+    "us_per_step": 1469.2786666666668
+   }
+  },
+  "n_steps": 3
+ }
+}
