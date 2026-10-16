@@ -4,11 +4,11 @@
 > Phase 5 "best prop vs today" column recomputed with round-half-up (the old column truncated; ≤0.1 pp changes).
 > The o_proj/down "1d2d beats swapAB at M=8/16" result is marked as unsettled (L2-warm isolated benchmark).
 > The bs ≥ 32 quant_norm delta is split per site (fused kernel vs residual copy) instead of assuming half the quant launches sit at norm sites.
-> The 0.23.x "swapAB at bs=256" label is confirmed wrong: the M<32 dispatch is identical in the v0.23.0 source.
-> New section "Upstream state as of 2026-10-16". Recommendation rewritten.
+> The 0.23.x "bs=256" GPU numbers are shown to come from a trace window with M < 32 (note under Conclusions).
+> bs=1 non-norm quant delta corrected from ~+60 to ~+55 µs/step. New section "Upstream state as of 2026-10-16". Recommendation rewritten.
 
 Run date 2026-10-15 (UTC), single rented GPU (Vast.ai, unprivileged; torch profiler only, no ncu/nsys).
-Everything needed to reproduce a number is in `~/fusion-study/` (scripts/, raw/, traces/, logs/, proto/).
+Everything needed to reproduce a number is in this directory (scripts/, raw/, traces/, logs/, proto/).
 
 ## TL;DR
 
@@ -22,7 +22,7 @@ Everything needed to reproduce a number is in `~/fusion-study/` (scripts/, raw/,
   residual copy that Inductor inserts: ≈ +71 µs fused kernel / +56 µs copy at bs=32 and ≈ +51 / +80 µs at bs=256
   (split method in Phase 3). The copy is 43–60% of the regression at bs ≥ 32; open PR #60481 removes it.
 - **At bs=1, losing swapAB now costs about +285 µs/step** (it was +362 in 0.23.x). Norm/quant adds +262 µs/step: the fused
-  kernel and residual copy account for ~+200, and ~+60 comes from `per_token_group_quant` (~2.4 µs) replacing `scale_1x128` (~1.6 µs) on
+  kernel and residual copy account for ~+208, and ~+55 comes from `per_token_group_quant` (~2.4 µs) replacing `scale_1x128` (~1.6 µs) on
   the o_proj/down inputs. That last part is not caused by norm fusion; it comes from leaving the FlashInfer kernel.
 - **The fused kernel is never meaningfully faster than `rms_norm` + `per_token_group_quant` run separately:** speed ratio (unfused time / fused time) 0.74–1.03× at
   1–16K tokens, and it reaches only 0.1–54% of peak HBM bandwidth. #54111 was a race fix, not a perf fix.
@@ -74,7 +74,7 @@ Configurations (flags verified against source at the pinned SHA, see `RUN.md`):
    is GPU time per step (Phase 3), which host load does not affect; at bs ≥ 8 the wall-clock B deltas are within the repeat spread.
 5. **The prefill runs are single runs.** The bs=1 prefill cell (2048 tokens, B +21%) is low confidence: A's own p90 equals B's median.
 6. **Per-step GPU time covers the decoder-layer forward kernels only.** lm_head (`nvjet`) and the sampler run outside the step
-   annotation and are identical across configs. The old 4782 → 7478 µs figures may have used a different basis, so compare deltas.
+   annotation and are identical across configs. The old 4782 → 7478 µs "bs=256" figures were taken at M < 32 (note under Conclusions), so they are not comparable.
 7. **On main, `fuse_norm_quant` and `fuse_act_quant` are already on by default** (`custom_ops=['+quant_fp8','none']`) even in A. There they
    match nothing, because the FlashInfer kernel consumes BF16. B/C pin `fuse_act_quant=false` so the only difference from A is
    norm+quant fusion plus the GEMM backend.
@@ -375,15 +375,18 @@ Only qkv and gate_up have a norm in front; the o_proj/down rows compare quant+GE
 |---|---|---|---|
 | Default sm90 kernel takes BF16, quantizes internally; fusion has nothing to match | yes | yes (`apply_input_quant=False`; e2e fusion test still skips DeepGEMM when FlashInfer blockscale exists) | holds |
 | M<32 swapAB / M≥32 DeepGEMM | yes | yes. But M≥32 quantizes with vLLM's `per_token_group_quant_fp8` (column-major, UE8M0), not TRT-LLM `scale_1x128` | holds, nuance |
-| bs=1 decode regression when fusing | ≈+13% (GEMM +362 µs, fused +186 µs) | B +11.5% wall (median of 3; +9.3% repeats 1+2); GPU +558 µs/step = GEMM +285 + quant/norm +262. quant/norm: B 637 = fused 418 + `per_token_group_quant` on o_proj/down inputs 172 + residual copy 45 + 2, vs A 375 = Triton rmsnorm 140 + `scale_1x128` ×144 235. So ~+60 µs of it is `per_token_group_quant` (2.4 µs) vs `scale_1x128` (1.6 µs) on non-norm GEMM inputs, not fusion. C +9.2% wall | holds |
-| bs=256 fused + CUTLASS | GPU +56% (CUTLASS 33.6 vs 19.9 µs/launch) | C GPU +11.4% (CUTLASS 16.5/16.2/49.0/40.8 vs DeepGEMM 13.6/11.2/45.1/29.7 µs/launch qkv/o/gate_up/down), wall +39 to +40% (see anomaly) | holds, smaller GPU gap |
+| bs=1 decode regression when fusing | ≈+13% (GEMM +362 µs, fused +186 µs) | B +11.5% wall (median of 3; +9.3% repeats 1+2); GPU +558 µs/step = GEMM +285 + quant/norm +262. quant/norm: B 637 = fused 418 + `per_token_group_quant` on o_proj/down inputs 172 + residual copy 45 + 2, vs A 375 = Triton rmsnorm 140 + `scale_1x128` ×144 235. So ~+55 µs of it (72 × (2.39 − 1.63)) is `per_token_group_quant` (2.4 µs) vs `scale_1x128` (1.6 µs) on non-norm GEMM inputs, not fusion. C +9.2% wall | holds |
+| bs=256 fused + CUTLASS | GPU +56% (CUTLASS 33.6 vs swapAB 19.9 µs/launch), but that trace window ran at M < 32, not 256 (see note) | C GPU +11.4% (CUTLASS 16.5/16.2/49.0/40.8 vs DeepGEMM 13.6/11.2/45.1/29.7 µs/launch qkv/o/gate_up/down), wall +39 to +40% (see anomaly) | old number was not a bs=256 measurement; real bs=256 gap is +11% GPU |
 | bs=256 fused + DeepGEMM (missing cell) | — | B wall +1.4 to +2.0%, GPU +2.0%: GEMM +1 µs, quant/norm +134 µs | **new: small regression, entirely from norm/quant** |
 | `rms_norm_per_block_quant` slower than rms_norm + quant | 1.08–1.36× | standalone 0.74–1.03× speed of unfused (i.e. up to 1.35× slower); in-model 5.7 µs/launch vs ~2 µs Triton rmsnorm | holds. #54111 only fixed a race (warp-shuffle max); structure unchanged (3 passes, VEC_SIZE=4, 1 CTA/token, no `__launch_bounds__`) |
 
-Note: the old "DeepGEMM swapAB at bs=256" label was wrong, not a dispatch change. The v0.23.0 source has the same
-`torch.cond(input.shape[0] < 32, ...)` split (FlashInfer swapAB below 32, DeepGEMM `fp8_gemm_nt` at 32 and above) and the same
-vendored DeepGEMM fallback, so at bs=256 arm A ran a DeepGEMM kernel there too. The 0.23.x "CUTLASS 33.6 vs swapAB 19.9 µs"
-comparison is CUTLASS vs DeepGEMM.
+Note on the old 0.23.x "bs=256" numbers (4782 → 7478 µs, CUTLASS 33.6 vs swapAB 19.9 µs/launch): that trace window was
+not at M=256. Arm A ran 144× `scale_1x128` + `deep_gemm::fp8_gemm_kernel_swapAB` with the same 16-token tile as at bs=1
+(`sweep_and_trace_bs256.txt` in the 2026-09 folder), and the v0.23.0 source routes to that FlashInfer path only when M < 32
+(same `torch.cond(input.shape[0] < 32, ...)` as on main). Its GEMM time, 2859 µs/step on the slower H100 NVL, is in line
+with this run's A at bs=32 (2860 µs on SXM5) and well below bs=256 (3586 µs). The most likely cause is that the analysis used the last segments of the trace, i.e. the
+tail of generation when chunked prefill had left only a few requests running. So the kernel label was right and the batch
+size was wrong; the 0.23.x "bs=256" rows are small-batch numbers. At a real bs=256, CUTLASS costs +11% GPU time per step.
 
 ### Phase 5: swapAB answer
 

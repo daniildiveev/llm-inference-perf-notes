@@ -1,5 +1,7 @@
 # FP8 norm+quant fusion in vLLM on H100: a GEMM-selection regression and an underperforming fused kernel
 
+> **Correction (2026-10-16):** the "bs=256" GPU numbers in this folder (+56% per step, CUTLASS 33.6 vs swapAB 19.9 µs/launch, fused kernel 7.08 µs) were not measured at batch 256. In those trace windows the default path ran `scale_1x128` + swapAB, which vLLM only takes for M < 32, so fewer than 32 requests were running (most likely the tail of generation). Read them as small-batch numbers. Real bs=256 measurements: [2026-10-15 re-measure](../2026-10-15_h100sxm_fusion-remeasure/RESULTS.md).
+
 Investigation of activation-quantization overhead in vLLM's FP8 block-scaled decode path. It started as "why are the fusion passes not firing" and ended with two findings: forcing norm+quant fusion on sm90 is a net loss because of which GEMM backend runs afterwards, and the fused `rms_norm_per_block_quant` kernel is slow on its own.
 
 **Setup.** Qwen3-8B-FP8 (W8A8, 1×128 block scales), H100 NVL (132 SMs, HBM3 peak 3.9 TB/s), unprivileged vast.ai container. Builds: bs=1 end-to-end runs on vLLM 0.23.1rc1.dev1458 (nightly), bs=256 runs and all microbenchmarks on vLLM 0.23.0 (PyPI). Within each column of each table, all arms come from the same build. Kernel-level numbers predate vLLM #54111 (see [Context](#context-that-arrived-during-the-work)).

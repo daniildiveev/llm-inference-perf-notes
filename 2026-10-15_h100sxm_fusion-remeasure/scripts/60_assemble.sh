@@ -1,5 +1,6 @@
 #!/bin/bash
 # Assemble RESULTS.md from results/*.md and RUN.md (headings of included parts demoted one level).
+# NOTE: rerunning overwrites the 2026-10-16 revision of RESULTS.md; results/*.md are the unrevised originals.
 cd /workspace/fusion-study
 demote() { sed 's/^#/##/' "$1"; echo; }
 {
